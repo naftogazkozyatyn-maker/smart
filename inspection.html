@@ -1,46 +1,86 @@
 <!DOCTYPE html>
 <html lang='uk'>
-  <head>
-    <meta charset='UTF-8'>
-    <title>inspection.html</title>
-    <link rel='stylesheet' href='css/style.css'>
-  </head>
-  <body>
-    <h2>Технічний огляд</h2>
+<head>
+  <meta charset='UTF-8'>
+  <title>Технічний огляд</title>
+  <link rel='stylesheet' href='css/style.css'>
+  <style>
+    fieldset {
+      margin-bottom: 15px;
+      padding: 10px;
+    }
+    input[disabled] {
+      opacity: 0.5;
+    }
+    button {
+      padding: 8px 15px;
+      font-size: 16px;
+      background-color: #597fe9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3a5dc8;
+    }
+  </style>
+</head>
+<body>
+  <h2>Технічний огляд</h2>
 
-    <form>
-      <fieldset>
-        <legend>Лінія 1</legend>
-        <label>
-          <input type="checkbox" name="line1_status"> ВКЛ/ВИКЛ
-        </label><br><br>
+  <form id="inspectionForm">
+    <fieldset>
+      <legend>Лінія 1</legend>
+      <label>
+        <input type="checkbox" id="line1_status"> ВКЛ/ВИКЛ
+      </label><br><br>
 
-        <label>Замір тиску газу на вході:
-          <input type="number" step="0.01" name="line1_in"> МПа
-        </label><br><br>
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line1_in" disabled> МПа
+      </label><br><br>
 
-        <label>Замір тиску газу на виході:
-          <input type="number" step="0.01" name="line1_out"> МПа
-        </label>
-      </fieldset>
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line1_out" disabled> МПа
+      </label>
+    </fieldset>
 
-      <br>
+    <fieldset>
+      <legend>Лінія 2</legend>
+      <label>
+        <input type="checkbox" id="line2_status"> ВКЛ/ВИКЛ
+      </label><br><br>
 
-      <fieldset>
-        <legend>Лінія 2</legend>
-        <label>
-          <input type="checkbox" name="line2_status"> ВКЛ/ВИКЛ
-        </label><br><br>
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line2_in" disabled> МПа
+      </label><br><br>
 
-        <label>Замір тиску газу на вході:
-          <input type="number" step="0.01" name="line2_in"> МПа
-        </label><br><br>
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line2_out" disabled> МПа
+      </label>
+    </fieldset>
 
-        <label>Замір тиску газу на виході:
-          <input type="number" step="0.01" name="line2_out"> МПа
-        </label>
-      </fieldset>
-    </form>
+    <button type="submit">Передати дані</button>
+  </form>
 
-  </body>
+  <script>
+    function toggleInputs(statusId, inputIds) {
+      const checkbox = document.getElementById(statusId);
+      checkbox.addEventListener("change", () => {
+        inputIds.forEach(id => {
+          const input = document.getElementById(id);
+          input.disabled = !checkbox.checked;
+        });
+      });
+    }
+
+    toggleInputs("line1_status", ["line1_in", "line1_out"]);
+    toggleInputs("line2_status", ["line2_in", "line2_out"]);
+
+    document.getElementById("inspectionForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Дані передані!");
+    });
+  </script>
+</body>
 </html>
