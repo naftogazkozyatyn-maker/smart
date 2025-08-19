@@ -5,13 +5,8 @@
   <title>Технічний огляд</title>
   <link rel='stylesheet' href='css/style.css'>
   <style>
-    fieldset {
-      margin-bottom: 15px;
-      padding: 10px;
-    }
-    input[disabled] {
-      opacity: 0.5;
-    }
+    fieldset { margin-bottom: 15px; padding: 10px; }
+    input[disabled] { opacity: 0.5; }
     button {
       padding: 8px 15px;
       font-size: 16px;
@@ -21,9 +16,7 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #3a5dc8;
-    }
+    button:hover { background-color: #3a5dc8; }
   </style>
 </head>
 <body>
@@ -64,6 +57,7 @@
   </form>
 
   <script>
+    // Функція вмикання/вимикання інпутів
     function toggleInputs(statusId, inputIds) {
       const checkbox = document.getElementById(statusId);
       checkbox.addEventListener("change", () => {
@@ -77,9 +71,44 @@
     toggleInputs("line1_status", ["line1_in", "line1_out"]);
     toggleInputs("line2_status", ["line2_in", "line2_out"]);
 
+    // Обробка форми
     document.getElementById("inspectionForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      alert("Дані передані!");
+
+      const now = new Date();
+      const timestamp = now.toISOString().replace("T", " ").split(".")[0];
+
+      const data = {
+        datetime: timestamp,
+        line1: {
+          status: document.getElementById("line1_status").checked ? "ВКЛ" : "ВИКЛ",
+          pressure_in: document.getElementById("line1_in").value,
+          pressure_out: document.getElementById("line1_out").value
+        },
+        line2: {
+          status: document.getElementById("line2_status").checked ? "ВКЛ" : "ВИКЛ",
+          pressure_in: document.getElementById("line2_in").value,
+          pressure_out: document.getElementById("line2_out").value
+        }
+      };
+
+      // Завантаження існуючого файлу TO.json, додавання запису та збереження
+      fetch("data/TO.json")
+        .then(r => r.json())
+        .catch(() => []) // якщо файл пустий/відсутній
+        .then(records => {
+          records.push(data);
+          return fetch("data/TO.json", {
+            method: "POST", // ⚠️ Працює лише на сервері з backend (наприклад Node/Express, PHP)
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(records, null, 2)
+          });
+        })
+        .then(() => {
+          alert("Дані збережені!");
+          window.location.href = "service.html"; // переадресація
+        })
+        .catch(err => alert("Помилка збереження: " + err));
     });
   </script>
 </body>
