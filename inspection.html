@@ -7,6 +7,40 @@
   </head>
   <body>
     <h2>Технічний огляд</h2>
-    <p>Форма з чекбоксами...</p>
+
+    <form>
+      <fieldset>
+        <legend>Лінія 1</legend>
+        <label>
+          <input type="checkbox" name="line1_status"> ВКЛ/ВИКЛ
+        </label><br><br>
+
+        <label>Замір тиску газу на вході:
+          <input type="number" step="0.01" name="line1_in"> МПа
+        </label><br><br>
+
+        <label>Замір тиску газу на виході:
+          <input type="number" step="0.01" name="line1_out"> МПа
+        </label>
+      </fieldset>
+
+      <br>
+
+      <fieldset>
+        <legend>Лінія 2</legend>
+        <label>
+          <input type="checkbox" name="line2_status"> ВКЛ/ВИКЛ
+        </label><br><br>
+
+        <label>Замір тиску газу на вході:
+          <input type="number" step="0.01" name="line2_in"> МПа
+        </label><br><br>
+
+        <label>Замір тиску газу на виході:
+          <input type="number" step="0.01" name="line2_out"> МПа
+        </label>
+      </fieldset>
+    </form>
+
   </body>
 </html>
