@@ -126,16 +126,20 @@
     </ul>
   </section>
 
-  <!-- Службовий блок -->
-  <section class="auth-block">
-    <h3>Для працівників компанії</h3>
-    <form>
-      <label for="login">Логін:</label>
-      <input type="text" id="login" name="login" placeholder="Введіть логін" disabled>
-      <label for="password">Пароль:</label>
-      <input type="password" id="password" name="password" placeholder="Введіть пароль" disabled>
-      <button type="button" disabled>Увійти</button>
-    </form>
+    <!-- Авторизація -->
+    <section class="login">
+        <h2>Авторизація персоналу</h2>
+        <form id="loginForm">
+            <input type="text" id="login" placeholder="Логін">
+            <input type="password" id="password" placeholder="Пароль">
+            <button type="submit">Увійти</button>
+        </form>
+    </section>
+
+    <script src="auth.js"></script>
+
+
+    
     <h4>Геолокація</h4>
     <button type="button" onclick="getLocation()">📍 Надіслати моє місцезнаходження</button>
     <div id="geo-output" class="geo-output"></div>
