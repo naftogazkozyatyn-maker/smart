@@ -4,24 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Газова безпека</title>
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #597fe9; color: white; padding: 15px; text-align: center; }
+    .logo { max-height: 60px; }
+    .operator { font-size: 16px; margin-top: 10px; font-weight: bold; }
+    .equipment-id { font-size: 20px; margin-top: 10px; font-weight: bold; }
+    section { padding: 20px; }
+    h2 { color: #1d4ed8; margin-bottom: 10px; }
+    .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .step { background: white; border-radius: 12px; padding: 15px; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
+    .step svg { width: 50px; height: 50px; fill: #f97316; margin-bottom: 10px; }
+    .call-btn { display: block; margin: 20px auto; padding: 15px; font-size: 22px; color: white; background: #f97316; border-radius: 12px; text-align: center; text-decoration: none; width: fit-content; }
+    ul.rules { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
+    ul.rules li { margin-bottom: 10px; }
+    .auth-block { margin: 30px 0; padding: 20px; background: #eef2ff; border-radius: 12px; }
+    .auth-block h3 { margin-bottom: 10px; color: #1d4ed8; }
+    .auth-block label { display: block; margin: 8px 0 4px; }
+    .auth-block input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 10px; }
+    .auth-block button { padding: 10px 15px; background: #1d4ed8; color: white; border: none; border-radius: 8px; cursor: pointer; }
+    .geo-output { margin-top: 10px; font-size: 14px; color: #444; }
+    footer { background: #1d4ed8; color: white; text-align: center; padding: 10px; margin-top: 30px; }
+  </style>
 </head>
 <body>
   <header>
     <img src="img/full_logo_vn.png" alt="Газмережі" class="logo">
-    <div id="operator" class="operator">Об’єкт газових мереж обслуговує Козятинська дільниця Вінницької філії ТОВ "Газорозподільні мережі України"</div>
+    <div id=".operator" class=".operator">Об’єкт газових мереж обслуговує Козятинська дільниця Вінницької філії ТОВ "Газорозподільні мережі України"</div>
     <div id="equipment-id" class="equipment-id">Номер обладнання: -</div>
   </header>
 
   <!-- Основні дії -->
   <section>
-    <h2>Що робити, якщо відчули запах газу чи помітили пошкодження?</h2>
+    <h2>Що робити, якщо відчули запах газу чи помітили пошкодження газопроводу або газового обладнання на об’єкті, біля якого Ви перебуваєте?</h2>
     <div class="steps">
-      <div class="step"><p>📞 Зателефонуй 104</p></div>
-      <div class="step"><p>🚫 Не наближайся та залиш небезпечне місце</p></div>
-      <div class="step"><p>🔥🚭 Не користуватись відкритим полум’ям, не палити</p></div>
+     <div class="step">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.6 10.8c1.2 2.4 3.2 4.4 5.6 5.6l1.9-1.9c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3 .5.7 0 1.3.6 1.3 1.3V20c0 .7-.6 1.3-1.3 1.3C9.4 21.3 2.7 14.6 2.7 6.3 2.7 5.6 3.3 5 4 5h3.2c.7 0 1.3.6 1.3 1.3 0 1 .2 2 .5 3 .1.4 0 .9-.3 1.2l-1.9 1.9z"/></svg>
+        <p>Зателефонуй на 104 та назви диспетчеру аварійної служби номер обладнання (розміщено над QR-кодом таблички та зверху цієї сторінки</p>
+      </div>
+      <div class="step">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10h16v4H4z"/></svg>
+        <p>Не наближайся до огорожі, не заходь на майданчик з обладнанням, не вживай самостійно жодних заходів по усуненню аварії та залиш небезпечне місце</p>
+      </div>
+
     </div>
-    <a href="tel:104" class="call-btn">Подзвонити 104</a>
+    <a href="tel:104" class="call-btn">📞 Подзвонити 104</a>
   </section>
 
 <!-- Правила безпеки -->
