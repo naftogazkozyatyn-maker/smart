@@ -51,7 +51,7 @@
     <a href="tel:104" class="call-btn">📞 Подзвонити 104</a>
   </section>
 
-<!-- Правила безпеки -->
+  <!-- Правила безпеки -->
   <section>
     
     <h2>ПРАВИЛА БЕЗПЕЧНОГО КОРИСТУВАННЯ ГАЗОМ У ПОБУТІ</h2>
@@ -92,23 +92,47 @@
       <li>Якщо потерпілий при свідомості, його потрібно напоїти міцним чаєм, чи кавою. Ні в якому випадку не можна давати алкоголю.</li
     </ul>
   </section>
+
   <!-- Службовий блок -->
   <section class="auth-block">
     <h3>Для працівників компанії</h3>
-    <form id="loginForm">
-      <input type="text" id="login" placeholder="Логін" required>
-      <input type="password" id="password" placeholder="Пароль" required>
-      <button type="submit">Увійти</button>
+    <form>
+      <label for="login">Логін:</label>
+      <input type="text" id="login" name="login" placeholder="Введіть логін" disabled>
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" placeholder="Введіть пароль" disabled>
+      <button type="button" disabled>Увійти</button>
     </form>
-    <div id="error" style="color:red;"></div>
-    <button type="button" onclick="getLocation()">📍 Надіслати місцезнаходження</button>
-    <div id="geo-output"></div>
+    <h4>Геолокація</h4>
+    <button type="button" onclick="getLocation()">📍 Надіслати моє місцезнаходження</button>
+    <div id="geo-output" class="geo-output"></div>
   </section>
-  
+
   <footer>
     Будь уважним — природний газ це друг, але вимагає обережності
   </footer>
-  
-  <script src="js/auth.js"></script>
+
+  <script>
+    // Підтягування ID з URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    if (id) {
+      document.getElementById("equipment-id").textContent = "Номер обладнання: " + id;
+    }
+    // Геолокація
+    function getLocation() {
+      const output = document.getElementById("geo-output");
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            output.textContent = `Широта: ${position.coords.latitude}, Довгота: ${position.coords.longitude}`;
+          },
+          () => { output.textContent = "Не вдалося отримати місцезнаходження."; }
+        );
+      } else {
+        output.textContent = "Геолокація не підтримується цим браузером.";
+      }
+    }
+  </script>
 </body>
 </html>
