@@ -1,0 +1,5 @@
+[
+  { "id": 1, "name": "Іваненко Іван", "login": "ivan", "password": "1234", "role": "Персонал", "email": "ivan@example.com" },
+  { "id": 2, "name": "Петренко Петро", "login": "petr", "password": "5678", "role": "Адміністратор", "email": "petr@example.com" },
+  { "id": 3, "name": "Гість", "login": "guest", "password": "0000", "role": "Візитер", "email": "guest@example.com" }
+]
