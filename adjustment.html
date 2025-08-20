@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang='uk'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Регулювання обладнання</title>
+  <link rel='stylesheet' href='css/style.css'>
+  <style>
+    fieldset { margin-bottom: 15px; padding: 10px; }
+    input[disabled] { opacity: 0.5; }
+    button {
+      padding: 8px 15px;
+      font-size: 16px;
+      background-color: #597fe9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #3a5dc8; }
+  </style>
+</head>
+<body>
+  <h2>Регулювання</h2>
+
+  <form id="inspectionForm">
+    <fieldset>
+      <legend>Лінія 1</legend>
+      <label>
+        <input type="checkbox" id="line1_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line1_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line1_out" disabled> МПа
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Лінія 2</legend>
+      <label>
+        <input type="checkbox" id="line2_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line2_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line2_out" disabled> МПа
+      </label>
+    </fieldset>
+
+    <button type="submit">Передати дані</button>
+  </form>
+
+  <script>
+    // Функція вмикання/вимикання інпутів
+    function toggleInputs(statusId, inputIds) {
+      const checkbox = document.getElementById(statusId);
+      checkbox.addEventListener("change", () => {
+        inputIds.forEach(id => {
+          const input = document.getElementById(id);
+          input.disabled = !checkbox.checked;
+        });
+      });
+    }
+
+    toggleInputs("line1_status", ["line1_in", "line1_out"]);
+    toggleInputs("line2_status", ["line2_in", "line2_out"]);
+
+    // Обробка форми
+    document.getElementById("inspectionForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const now = new Date();
+      const timestamp = now.toISOString().replace("T", " ").split(".")[0];
+
+      const data = {
+        datetime: timestamp,
+        line1: {
+          status: document.getElementById("line1_status").checked ? "ВКЛ" : "ВИКЛ",
+          pressure_in: document.getElementById("line1_in").value,
+          pressure_out: document.getElementById("line1_out").value
+        },
+        line2: {
+          status: document.getElementById("line2_status").checked ? "ВКЛ" : "ВИКЛ",
+          pressure_in: document.getElementById("line2_in").value,
+          pressure_out: document.getElementById("line2_out").value
+        }
+      };
+
+      // Завантаження існуючого файлу TO.json, додавання запису та збереження
+      fetch("data/TO.json")
+        .then(r => r.json())
+        .catch(() => []) // якщо файл пустий/відсутній
+        .then(records => {
+          records.push(data);
+          return fetch("data/TO.json", {
+            method: "POST", // ⚠️ Працює лише на сервері з backend (наприклад Node/Express, PHP)
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(records, null, 2)
+          });
+        })
+        .then(() => {
+          alert("Дані збережені!");
+          window.location.href = "service.html"; // переадресація
+        })
+        .catch(err => alert("Помилка збереження: " + err));
+    });
+  </script>
+</body>
+</html>
