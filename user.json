@@ -1,2 +1,0 @@
-[{ "id": 1, "name": "Віталій", "login": "Admin", "password": "12345QWEqwe", "role": "Адміністратор", "email": "Admin@example.com" },
-  { "id": 2, "name": "Світлана", "login": "Personal", "password": "12345QWEqwe", "role": "Персонал", "email": "Personal@example.com" }]
