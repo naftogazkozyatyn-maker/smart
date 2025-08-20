@@ -1,9 +1,0 @@
-[
-  { "id": 1, "name": "Ковальчук Віталій Анатолійович", "login": "vi.kovalchuk", "password": "12345QWEqwe", "role": "Адміністратор", "email": "vi.kovalchuk@grmu.com.ua" },
-  { "id": 2, "name": "Кусь Дмитро Олександрович", "login": "D.Kus", "password": "12345QWEqwe", "role": "Персонал", "email": "D.Kus@eml.grmu.com.ua" },
-  { "id": 3, "name": "Желєзний Олександр Васильович", "login": "O.Zhelyeznyi", "password": "12345QWEqwe", "role": "Персонал", "email": "O.Zhelyeznyi@grmu.com.ua" },
-  { "id": 3, "name": "Кравченко Людмила Андріївна", "login": "Lu.Kravchenko", "password": "12345QWEqwe", "role": "Персонал", "email": "Lu.Kravchenko@eml.grmu.com.ua" },
-  { "id": 3, "name": "Пісарєва Світлана Анатоліївна", "login": "S.Pisareva", "password": "12345QWEqwe", "role": "Персонал", "email": "S.Pisareva@eml.grmu.com.ua" },
-  { "id": 3, "name": "Дячинський Роман Володимирович", "login": "R.Dyachinskiy", "password": "12345QWEqwe", "role": "Персонал", "email": "R.Dyachinskiy@grmu.com.ua" },
-  { "id": 4, "name": "Руденко Олена Андріївна", "login": "ole.rudenko", "password": "12345QWEqwe", "role": "Візитер", "email": "ole.rudenko@grmu.com.ua" }
-]
