@@ -1,4 +1,4 @@
 [
-  { "id": 1, "name": "Віталій", "login": "Admin", "password": "12345QWEqwe", "role": "Адміністратор"
-  { "id": 2, "name": "Світлана", "login": "Personal", "password": "12345QWEqwe", "role": "Персонал"
+  { "id": 1, "name": "Віталій", "login": "Admin", "password": "12345QWEqwe", "role": "Адміністратор"}
+  { "id": 2, "name": "Світлана", "login": "Personal", "password": "12345QWEqwe", "role": "Персонал"}
   ]
