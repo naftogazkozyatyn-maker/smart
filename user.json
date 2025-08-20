@@ -1,4 +1,4 @@
 [
-  { "id": 1, "name": "Ковальчук Віталій", "login": "Admin", "password": "12345QWEqwe", "role": "Адміністратор"
-  { "id": 3, "name": "Пісарєва Світлана", "login": "guest", "password": "12345QWEqwe", "role": "Персонал"
+  { "id": 1, "name": "Віталій", "login": "Admin", "password": "12345QWEqwe", "role": "Адміністратор"
+  { "id": 3, "name": "Світлана", "login": "guest", "password": "12345QWEqwe", "role": "Персонал"
   ]
