@@ -6,6 +6,41 @@
   </head>
   <body>
     <h2>Технічне обслуговування</h2>
-    <p>Форма...</p>
+      <form id="inspectionForm">
+    <fieldset>
+      <legend>Лінія 1</legend>
+      <label>
+        <input type="checkbox" id="line1_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line1_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line1_out" disabled> МПа
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Лінія 2</legend>
+      <label>
+        <input type="checkbox" id="line2_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line2_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line2_out" disabled> МПа
+      </label>
+    </fieldset>
+
+    <button type="submit">Передати дані</button>
+  </form>
+
+
+    
   </body>
 </html>
