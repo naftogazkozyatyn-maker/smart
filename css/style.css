@@ -14,6 +14,9 @@ footer { background: #1d4ed8; color: white; text-align: center; padding: 10px; m
     .step svg { width: 50px; height: 50px; fill: #f97316; margin-bottom: 10px; }
     .call-btn { display: block; margin: 20px auto; padding: 15px; font-size: 22px; color: white; background: #f97316; border-radius: 12px; text-align: center; text-decoration: none; width: fit-content; }
 
+    .right-align {text-align: right;}
+
+
 /* Burger Menu */
 .burger-menu {
   font-size: 24px;
