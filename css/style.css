@@ -18,6 +18,13 @@ footer { background: #1d4ed8; color: white; text-align: center; padding: 10px; m
 
 
 /* Burger Menu */
+nav {
+  display: none;
+}
+nav.active {
+  display: block;
+}
+
 .burger-menu {
   font-size: 24px;
   cursor: pointer;
