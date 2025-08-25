@@ -185,5 +185,17 @@
       .catch(err => alert("Помилка: " + err));
     });
   </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("nav");
+
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+    }
+  });
+</script>
 </body>
 </html>
