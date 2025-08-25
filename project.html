@@ -56,5 +56,17 @@
       <li><a href="service.html">Повернутись назад</a> |
       </li>
     </ul>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("nav");
+
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+    }
+  });
+</script>
   </body>
 </html>
