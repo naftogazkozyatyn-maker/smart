@@ -59,5 +59,17 @@
     if (!user) window.location.href = "index.html";
     else document.getElementById("userInfo").innerHTML = `<p>Вітаю, ${user.name} (${user.role})</p>`;
   </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("nav");
+
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+    }
+  });
+</script>
 </body>
 </html>
