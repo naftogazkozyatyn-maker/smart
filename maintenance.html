@@ -1,0 +1,255 @@
+<!DOCTYPE html
+><html lang='uk'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maintenance.html</title>
+    <link rel='stylesheet' href='css/style.css'>
+  </head>
+  <body>
+        <header>
+    <img src="img/full_logo_vn.png" alt="Газмережі" class="logo">
+    <div id="equipment-id" class="equipment-id">Номер обладнання: - </div>
+
+<div class="burger-menu" onclick="toggleMenu()">☰</div>
+<nav id="sideMenu" class="side-menu">
+  <div class="close-btn" onclick="toggleMenu()">✖</div>
+  <ul class="menu">
+    <li><a href="service.html">Сервіс</a></li>
+    <li>Технічна документація
+      <ul>
+        <li><a href="passport.html">Протокол ШГРП</a></li>
+        <li><a href="project.html">Робочий проект</a></li>
+        <li><a href="docs.html">Виконавчо-технічна документація</a></li>
+        <li><a href="scheme.html">Схема обладнання</a></li>
+        <li><a href="mode.html">Режимна карта</a></li>
+      </ul>
+    </li>
+    <li>Виконання робіт
+      <ul>
+        <li><a href="schedule.html">Графік проведення робіт</a></li>
+        <li><a href="inspection.html">Технічний огляд</a></li>
+        <li><a href="adjustment.html">Регулювання</a></li>
+        <li><a href="maintenance.html">Технічне обслуговування</a></li>
+        <li><a href="repair.html">Плановий ремонт</a></li>
+        <li><a href="kvr.html">Обслуговування КВП</a></li>
+        <li><a href="photo.html">Фотофіксація</a></li>
+      </ul>
+    </li>
+    <li>Інструкції та відео
+      <ul>
+        <li><a href="instructions.html">Інструкції</a></li>
+        <li><a href="videos.html">Відео</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+</header>
+    <h2>Технічне обслуговування</h2>
+    <h3>Форма для технічного огляду</h3>
+      <form id="inspectionForm">
+    <p>Замір тиску газо по кожній задіяній лінії:</p>
+    <fieldset>
+      <legend>Лінія 1</legend>
+      <label>
+        <input type="checkbox" id="line1_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line1_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line1_out" disabled> МПа
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Лінія 2</legend>
+      <label>
+        <input type="checkbox" id="line2_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line2_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line2_out" disabled> МПа
+      </label>
+    </fieldset>
+
+  
+
+<h3>Форма для технічного обслуговування</h3>
+
+    <fieldset>
+      <legend>Лінія 1</legend>
+      <label>
+        <input type="checkbox" id="line1_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>Замір тиску газу на вході у фільтр:
+        <input type="number" step="0.01" id="line1_filter_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході з фільтра:
+        <input type="number" step="0.01" id="line1_filter_out" disabled> МПа
+      </label>
+    </fieldset>
+        
+    <fieldset>
+      <legend>Лінія 2</legend>
+      <label>
+        <input type="checkbox" id="line2_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>Замір тиску газу на вході у фільтр:
+        <input type="number" step="0.01" id="line2_filter_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході з фільтра:
+        <input type="number" step="0.01" id="line2_filter_out" disabled> МПа
+      </label>
+    </fieldset>
+
+  <h3>Під час проведення обслуговування було виконано:</h3>
+    <fieldset>     
+   <legend>на лінії 1</legend>
+      <legend>-очищення фільтра лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_filter_in"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну регулятора тиску лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_regulator"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну ЗЗК лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_zzk"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну ЗСК лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_zsk"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну відключаючих пристроїв лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_vp"> ВКЛ/ВИКЛ
+      </label><br><br>
+</fieldset>
+        
+       <fieldset>
+ <legend>на лінії 2</legend>       
+        
+        <legend>-очищення фільтра лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_filter_in"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну регулятора тиску лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_regulator"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну ЗЗК лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_zzk"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну ЗСК лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_zsk"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну відключаючих пристроїв лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_vp"> ВКЛ/ВИКЛ
+      </label><br><br>
+         </fieldset>
+        
+    <h3>Усунуто витоків газу</h3>
+    
+    <fieldset>
+      <legend>на лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>на газопроводі високого тиску:
+        <input type="number" step="1" id="line1_leak3" disabled> шт
+      </label><br><br>
+
+      <label>на газопроводі середнього тиску:
+        <input type="number" step="1" id="line1_leak2" disabled> шт
+      </label> 
+
+      <label>на газопроводі низького тиску:
+        <input type="number" step="1" id="line1_leak1" disabled> шт
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>на лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>на газопроводі високого тиску:
+        <input type="number" step="1" id="line2_leak3" disabled> шт
+      </label><br><br>
+
+      <label>на газопроводі середнього тиску:
+        <input type="number" step="1" id="line2_leak2" disabled> шт
+      </label> 
+
+      <label>на газопроводі низького тиску:
+        <input type="number" step="1" id="line2_leak1" disabled> шт
+      </label>
+    </fieldset>
+        
+    <button type="submit">Передати дані</button>
+  </form>
+
+
+    
+  
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("nav");
+
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+    }
+
+    // Десктоп: підменю при hover
+    const items = document.querySelectorAll("nav ul li");
+    items.forEach(item => {
+      item.addEventListener("mouseenter", () => {
+        if (window.innerWidth > 768) {
+          let submenu = item.querySelector("ul");
+          if (submenu) submenu.style.display = "block";
+        }
+      });
+      item.addEventListener("mouseleave", () => {
+        if (window.innerWidth > 768) {
+          let submenu = item.querySelector("ul");
+          if (submenu) submenu.style.display = "none";
+        }
+      });
+
+      // Мобільні: підменю по кліку
+      item.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+          let submenu = item.querySelector("ul");
+          if (submenu) {
+            e.preventDefault();
+            item.classList.toggle("active");
+          }
+        }
+      });
+    });
+  });
+</script>
+
+</body>
