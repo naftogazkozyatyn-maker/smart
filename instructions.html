@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='uk'>
+  <head>
+  <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instructions.html</title>
+    <link rel='stylesheet' href='css/style.css'>
+  </head>
+  <body>
+        <header>
+    <div id="equipment-id" class="equipment-id">Номер обладнання: - </div>
+
+<div class="burger-menu" onclick="toggleMenu()">☰</div>
+<nav id="sideMenu" class="side-menu">
+  <div class="close-btn" onclick="toggleMenu()">✖</div>
+  <ul class="menu">
+    <li><a href="service.html">Сервіс</a></li>
+    <li>Технічна документація
+      <ul>
+        <li><a href="passport.html">Протокол ШГРП</a></li>
+        <li><a href="project.html">Робочий проект</a></li>
+        <li><a href="docs.html">Виконавчо-технічна документація</a></li>
+        <li><a href="scheme.html">Схема обладнання</a></li>
+        <li><a href="mode.html">Режимна карта</a></li>
+      </ul>
+    </li>
+    <li>Виконання робіт
+      <ul>
+        <li><a href="schedule.html">Графік проведення робіт</a></li>
+        <li><a href="inspection.html">Технічний огляд</a></li>
+        <li><a href="adjustment.html">Регулювання</a></li>
+        <li><a href="maintenance.html">Технічне обслуговування</a></li>
+        <li><a href="repair.html">Плановий ремонт</a></li>
+        <li><a href="kvr.html">Обслуговування КВП</a></li>
+        <li><a href="photo.html">Фотофіксація</a></li>
+      </ul>
+    </li>
+    <li>Інструкції та відео
+      <ul>
+        <li><a href="instructions.html">Інструкції</a></li>
+        <li><a href="videos.html">Відео</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+          <span class="user-info">Ви увійшли як: User (Role)</span>
+</header>
+    <h2>Інструкції та навчальні відео</h2>
+    <ul>
+
+      <li><a href='docs/3_instr_OP.pdf'>Інструкція по охороні праці для слюсаря-ремонтника обладнання ГРП і ШГРП</a>
+      <li><a href='docs/4_instr_TO.pdf'>Інструкція профілактичного обслуговування та річної ревізії</a>
+      <li><a href='docs/5_tech_instr_TO.pdf'>Технологічна інструкція при проведенні технічного обслуговування ГРП, ШГРП, ГРУ</a>
+      <li><a href='docs/6_instr_bypass.pdf'>Інструкція по переходу на обвідну лінію (байпас)</a>
+      <li><a href='docs/7_instr_antifire.pdf'>Інструкція по техніці безпеки і протипожежним заходам на ГРП і ШГРП</a>
+  
+      </li>
+    </ul>
+    <video controls src='video/training1.mp4'></video>
+    <video controls src='video/training2.mp4'></video>
+   <ul>
+    <a href="service.html">Повернутись назад</a> |
+  </ul>
+  
+      <ul>
+      <a href="works.html">Повернутись назад</a> |
+    </ul>
+    
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("nav");
+
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+    }
+
+    // Десктоп: підменю при hover
+    const items = document.querySelectorAll("nav ul li");
+    items.forEach(item => {
+      item.addEventListener("mouseenter", () => {
+        if (window.innerWidth > 768) {
+          let submenu = item.querySelector("ul");
+          if (submenu) submenu.style.display = "block";
+        }
+      });
+      item.addEventListener("mouseleave", () => {
+        if (window.innerWidth > 768) {
+          let submenu = item.querySelector("ul");
+          if (submenu) submenu.style.display = "none";
+        }
+      });
+
+      // Мобільні: підменю по кліку
+      item.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+          let submenu = item.querySelector("ul");
+          if (submenu) {
+            e.preventDefault();
+            item.classList.toggle("active");
+          }
+        }
+      });
+    });
+  });
+</script>
+
+</body>
