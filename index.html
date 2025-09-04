@@ -25,6 +25,18 @@
     .auth-block button { padding: 10px 15px; background: #1d4ed8; color: white; border: none; border-radius: 8px; cursor: pointer; }
     .geo-output { margin-top: 10px; font-size: 14px; color: #444; }
     footer { background: #eee417; color: #1d4ed8; text-align: center; padding: 10px; margin-top: 30px; }
+
+    .danger-icon{
+  width:24px;        /* розмір значка — змінюйте при потребі */
+  height:24px;
+  vertical-align:middle;
+  margin-right:8px;
+  display:inline-block;
+}
+@media (max-width:480px){
+  .danger-icon{ width:18px; height:18px; margin-right:6px; }
+}
+
   </style>
 </head>
 <body>
@@ -34,6 +46,8 @@
     <div id="equipment-id" class="equipment-id">Номер об’єкту: ШГРП №01150004</div>
   </header>
 
+<img src="img/danger.png" alt="Небезпека" class="danger-icon" />
+  
   <!-- Основні дії -->
   <section>
     <!--       <img src="img/danger.jpg" alt="Знак небезпеки" ”width=”100px align="middle">       -->
