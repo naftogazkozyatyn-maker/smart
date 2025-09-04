@@ -7,44 +7,53 @@
     <link rel='stylesheet' href='css/style.css'>
   </head>
   <body>
-        <header>
-    <div id="equipment-id" class="equipment-id">Номер обладнання: - </div>
+       <header>
+    <div class="logo">Smart Energy</div>
+    <nav class="desktop-menu">
+      <ul>
+        <li><a href="documentation.html">Технічна документація</a>
+          <ul>
+            <li><a href="passport.html">Протокол ПРГ</a></li>
+            <li><a href="project.html">Робочий проект</a></li>
+            <li><a href="docs.html">Виконавчо-технічна документація</a></li>
+            <li><a href="scheme.html">Принципова схема ПРГ</a></li>
+            <li><a href="mode.html">Режимна картка роботи обладнання</a></li>
+          </ul>
+        </li>
+        <li><a href="works.html">Виконання робіт</a>
+          <ul>
+            <li><a href="list_prg.html">Графіки проведення робіт</a></li>
+            <li><a href="inspection.html">Технічний огляд</a></li>
+            <li><a href="adjustment.html">Регулювання</a></li>
+            <li><a href="maintenance.html">Технічне обслуговування</a></li>
+            <li><a href="repair.html">Плановий ремонт</a></li>
+            <li><a href="devices.html">Обслуговування КВП</a></li>
+            <li><a href="photo.html">Фотофіксація</a></li>
+          </ul>
+        </li>
+        <li><a href="instructions.html">Інструкції та навчальні відео</a></li>
+          <ul>
+            <li><a href="instructions.html">Інструкції</a></li>
+            <li><a href="videos.html">Відео</a></li>
+          </ul>
+      </ul>
+    </nav>
 
-<div class="burger-menu" onclick="toggleMenu()">☰</div>
-<nav id="sideMenu" class="side-menu">
-  <div class="close-btn" onclick="toggleMenu()">✖</div>
-  <ul class="menu">
-    <li><a href="service.html">Сервіс</a></li>
-    <li>Технічна документація
-      <ul>
-        <li><a href="passport.html">Протокол ШГРП</a></li>
-        <li><a href="project.html">Робочий проект</a></li>
-        <li><a href="docs.html">Виконавчо-технічна документація</a></li>
-        <li><a href="scheme.html">Схема обладнання</a></li>
-        <li><a href="mode.html">Режимна карта</a></li>
+    <!-- Мобільне меню -->
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="menu-header">
+        <button onclick="goBack()">←</button>
+        <span id="menuTitle">Сервіс</span>
+        <button onclick="closeMenu()">✖</button>
+      </div>
+      <ul id="menuContent">
+        <li onclick="openSubmenu('documentation', 'Технічна документація')">Технічна документація</li>
+        <li onclick="openSubmenu('works', 'Виконання робіт')">Виконання робіт</li>
+        <li onclick="openSubmenu('instructions', 'videos')">Інструкції та навчальні відео</a></li>
       </ul>
-    </li>
-    <li>Виконання робіт
-      <ul>
-        <li><a href="list.prg.html">Графіки проведення робіт</a></li>
-        <li><a href="inspection.html">Технічний огляд</a></li>
-        <li><a href="adjustment.html">Регулювання</a></li>
-        <li><a href="maintenance.html">Технічне обслуговування</a></li>
-        <li><a href="repair.html">Плановий ремонт</a></li>
-        <li><a href="kvr.html">Обслуговування КВП</a></li>
-        <li><a href="photo.html">Фотофіксація</a></li>
-      </ul>
-    </li>
-    <li>Інструкції та відео
-      <ul>
-        <li><a href="instructions.html">Інструкції</a></li>
-        <li><a href="videos.html">Відео</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-          <span class="user-info">Ви увійшли як: User (Role)</span>
-</header>
+    </div>
+  </header>
     <h2>Технічна документація</h2>
     <ul>
         <li><a href="docs/protokol.pdf">Протокол ПРГ</a></li>
