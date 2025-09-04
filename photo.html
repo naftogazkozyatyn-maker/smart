@@ -40,21 +40,24 @@
       </ul>
     </nav>
 
-    <!-- Мобільне меню -->
-    <div class="burger" onclick="toggleMenu()">☰</div>
-    <div id="mobileMenu" class="mobile-menu">
-      <div class="menu-header">
-        <button onclick="goBack()">←</button>
-        <span id="menuTitle">Сервіс</span>
-        <button onclick="closeMenu()">✖</button>
-      </div>
-      <ul id="menuContent">
-        <li onclick="openSubmenu('documentation', 'Технічна документація')">Технічна документація</li>
-        <li onclick="openSubmenu('works', 'Виконання робіт')">Виконання робіт</li>
-        <li onclick="openSubmenu('instructions', 'videos')">Інструкції та навчальні відео</a></li>
-      </ul>
-    </div>
+<!-- Бургер -->
+<div class="burger">☰</div>
+
+<!-- Мобільне меню -->
+<div id="mobileMenu" class="mobile-menu">
+  <div class="menu-header">
+    <button onclick="goBack()">←</button>
+    <span id="menuTitle">Сервіс</span>
+    <button onclick="closeMenu()">✖</button>
+  </div>
+  <ul id="menuContent">
+    <li onclick="openSubmenu('documentation', 'Технічна документація')">Технічна документація</li>
+    <li onclick="openSubmenu('works', 'Виконання робіт')">Виконання робіт</li>
+    <li onclick="openSubmenu('instructions', 'Інструкції та навчальні відео')">Інструкції та навчальні відео</li>
+  </ul>
+</div>
   </header>
+  
   <main>
     <h1>Фотофіксація стану об’єкта</h1>
     <form id="photoForm" enctype="multipart/form-data">
