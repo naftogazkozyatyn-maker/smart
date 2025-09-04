@@ -56,24 +56,84 @@
     </div>
   </header>
   <main>
-    <h1>Технічний огляд</h1>
-    <form id="inspectionForm">
-      <label><input type="checkbox" id="line1_status"> Лінія 1 – стан</label>
-      <input type="text" id="line1_in" disabled placeholder="Вхід">
-      <input type="text" id="line1_out" disabled placeholder="Вихід"><br>
+  <h2>Технічний огляд</h2>
 
-      <label><input type="checkbox" id="line2_status"> Лінія 2 – стан</label>
-      <input type="text" id="line2_in" disabled placeholder="Вхід">
-      <input type="text" id="line2_out" disabled placeholder="Вихід"><br>
+  <form id="inspectionForm">
+    <fieldset>
+      <legend>Лінія 1</legend>
+      <label>
+        <input type="checkbox" id="line1_status"> ВКЛ/ВИКЛ
+      </label><br><br>
 
-      <label><input type="checkbox" id="line1_leak1"> Лінія 1 – витік 1</label>
-      <input type="text" id="line1_leak2" disabled placeholder="Витік 2">
-      <input type="text" id="line1_leak3" disabled placeholder="Витік 3"><br>
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line1_in" disabled> МПа
+      </label><br><br>
 
-      <label><input type="checkbox" id="line2_leak1"> Лінія 2 – витік 1</label>
-      <input type="text" id="line2_leak2" disabled placeholder="Витік 2">
-      <input type="text" id="line2_leak3" disabled placeholder="Витік 3"><br>
-    </form>
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line1_out" disabled> МПа
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Лінія 2</legend>
+      <label>
+        <input type="checkbox" id="line2_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line2_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line2_out" disabled> МПа
+      </label>
+    </fieldset>
+
+              <h3>Усунуто витоків газу</h3>
+    
+    <fieldset>
+      <legend>на лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>на газопроводі високого тиску:
+        <input type="number" step="1" id="line1_leak3" disabled> шт
+      </label><br><br>
+
+      <label>на газопроводі середнього тиску:
+        <input type="number" step="1" id="line1_leak2" disabled> шт
+      </label> 
+
+      <label>на газопроводі низького тиску:
+        <input type="number" step="1" id="line1_leak1" disabled> шт
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>на лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>на газопроводі високого тиску:
+        <input type="number" step="1" id="line2_leak3" disabled> шт
+      </label><br><br>
+
+      <label>на газопроводі середнього тиску:
+        <input type="number" step="1" id="line2_leak2" disabled> шт
+      </label> 
+
+      <label>на газопроводі низького тиску:
+        <input type="number" step="1" id="line2_leak1" disabled> шт
+      </label>
+    </fieldset>
+    
+    <button type="submit">Передати дані</button>
+  </form>
+      <ul>
+      <a href="works.html">Повернутись назад</a> |
+    </ul>
   </main>
 </body>
 </html>
