@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Фотофіксація</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">Smart Energy</div>
+    <nav class="desktop-menu">
+      <ul>
+        <li><a href="documentation.html">Технічна документація</a></li>
+        <li><a href="works.html">Виконання робіт</a>
+          <ul>
+            <li><a href="schedule.html">Графіки проведення робіт</a></li>
+            <li><a href="inspection.html">Технічний огляд</a></li>
+            <li><a href="adjustment.html">Регулювання</a></li>
+            <li><a href="maintenance.html">Технічне обслуговування</a></li>
+            <li><a href="repair.html">Плановий ремонт</a></li>
+            <li><a href="devices.html">Обслуговування КВП</a></li>
+            <li><a href="photo.html" class="active">Фотофіксація</a></li>
+          </ul>
+        </li>
+        <li><a href="instructions.html">Інструкції та навчальні відео</a></li>
+      </ul>
+    </nav>
+
+    <!-- Мобільне меню -->
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="menu-header">
+        <button onclick="goBack()">←</button>
+        <span id="menuTitle">Фотофіксація</span>
+        <button onclick="closeMenu()">✖</button>
+      </div>
+      <ul id="menuContent">
+        <li><a href="schedule.html">Графіки проведення робіт</a></li>
+        <li><a href="inspection.html">Технічний огляд</a></li>
+        <li><a href="adjustment.html">Регулювання</a></li>
+        <li><a href="maintenance.html">Технічне обслуговування</a></li>
+        <li><a href="repair.html">Плановий ремонт</a></li>
+        <li><a href="devices.html">Обслуговування КВП</a></li>
+        <li><a href="photo.html" class="active">Фотофіксація</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <h1>Фотофіксація стану об’єкта</h1>
+    <form id="photoForm" enctype="multipart/form-data">
+      <label for="photoUpload">Завантажте фото:</label><br>
+      <input type="file" id="photoUpload" name="photoUpload" accept="image/*"><br><br>
+      <button type="submit">Зберегти фото</button>
+    </form>
+    <div id="photoGallery">
+      <p>Тут буде відображатися галерея завантажених фото.</p>
+    </div>
+  </main>
+</body>
+</html>

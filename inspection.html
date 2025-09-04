@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Технічний огляд</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">Smart Energy</div>
+    <nav class="desktop-menu">
+      <ul>
+        <li><a href="documentation.html">Технічна документація</a></li>
+        <li><a href="works.html">Виконання робіт</a>
+          <ul>
+            <li><a href="schedule.html">Графіки проведення робіт</a></li>
+            <li><a href="inspection.html" class="active">Технічний огляд</a></li>
+            <li><a href="adjustment.html">Регулювання</a></li>
+            <li><a href="maintenance.html">Технічне обслуговування</a></li>
+            <li><a href="repair.html">Плановий ремонт</a></li>
+            <li><a href="devices.html">Обслуговування КВП</a></li>
+            <li><a href="photo.html">Фотофіксація</a></li>
+          </ul>
+        </li>
+        <li><a href="instructions.html">Інструкції та навчальні відео</a></li>
+      </ul>
+    </nav>
+
+    <!-- Мобільне меню -->
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="menu-header">
+        <button onclick="goBack()">←</button>
+        <span id="menuTitle">Технічний огляд</span>
+        <button onclick="closeMenu()">✖</button>
+      </div>
+      <ul id="menuContent">
+        <li><a href="schedule.html">Графіки проведення робіт</a></li>
+        <li><a href="inspection.html" class="active">Технічний огляд</a></li>
+        <li><a href="adjustment.html">Регулювання</a></li>
+        <li><a href="maintenance.html">Технічне обслуговування</a></li>
+        <li><a href="repair.html">Плановий ремонт</a></li>
+        <li><a href="devices.html">Обслуговування КВП</a></li>
+        <li><a href="photo.html">Фотофіксація</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <h1>Технічний огляд</h1>
+    <form id="inspectionForm">
+      <label><input type="checkbox" id="line1_status"> Лінія 1 – стан</label>
+      <input type="text" id="line1_in" disabled placeholder="Вхід">
+      <input type="text" id="line1_out" disabled placeholder="Вихід"><br>
+
+      <label><input type="checkbox" id="line2_status"> Лінія 2 – стан</label>
+      <input type="text" id="line2_in" disabled placeholder="Вхід">
+      <input type="text" id="line2_out" disabled placeholder="Вихід"><br>
+
+      <label><input type="checkbox" id="line1_leak1"> Лінія 1 – витік 1</label>
+      <input type="text" id="line1_leak2" disabled placeholder="Витік 2">
+      <input type="text" id="line1_leak3" disabled placeholder="Витік 3"><br>
+
+      <label><input type="checkbox" id="line2_leak1"> Лінія 2 – витік 1</label>
+      <input type="text" id="line2_leak2" disabled placeholder="Витік 2">
+      <input type="text" id="line2_leak3" disabled placeholder="Витік 3"><br>
+    </form>
+  </main>
+</body>
+</html>

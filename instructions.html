@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Інструкції та навчальні відео</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">Smart Energy</div>
+    <nav class="desktop-menu">
+      <ul>
+        <li><a href="documentation.html">Технічна документація</a></li>
+        <li><a href="works.html">Виконання робіт</a></li>
+        <li><a href="instructions.html" class="active">Інструкції та навчальні відео</a></li>
+      </ul>
+    </nav>
+
+    <!-- Мобільне меню -->
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="menu-header">
+        <button onclick="goBack()">←</button>
+        <span id="menuTitle">Інструкції та відео</span>
+        <button onclick="closeMenu()">✖</button>
+      </div>
+      <ul id="menuContent">
+        <li><a href="documentation.html">Технічна документація</a></li>
+        <li><a href="works.html">Виконання робіт</a></li>
+        <li><a href="instructions.html" class="active">Інструкції та навчальні відео</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <h1>Інструкції та навчальні відео</h1>
+    <section>
+      <h2>Інструкції</h2>
+      <ul>
+        <li><a href="files/instruction1.pdf" target="_blank">Інструкція з експлуатації</a></li>
+        <li><a href="files/instruction2.pdf" target="_blank">Інструкція з техніки безпеки</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Відео</h2>
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Навчальне відео №1</a></li>
+        <li><a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" target="_blank">Навчальне відео №2</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

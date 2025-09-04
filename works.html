@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Виконання робіт</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">Smart Energy</div>
+    <nav class="desktop-menu">
+      <ul>
+        <li><a href="documentation.html">Технічна документація</a></li>
+        <li><a href="works.html" class="active">Виконання робіт</a></li>
+        <li><a href="instructions.html">Інструкції та навчальні відео</a></li>
+      </ul>
+    </nav>
+
+    <!-- Мобільне меню -->
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="menu-header">
+        <button onclick="goBack()">←</button>
+        <span id="menuTitle">Виконання робіт</span>
+        <button onclick="closeMenu()">✖</button>
+      </div>
+      <ul id="menuContent">
+        <li><a href="schedule.html">Графік проведення робіт</a></li>
+        <li><a href="inspection.html">Технічний огляд</a></li>
+        <li><a href="adjustment.html">Регулювання</a></li>
+        <li><a href="maintenance.html">Технічне обслуговування</a></li>
+        <li><a href="repair.html">Плановий ремонт</a></li>
+        <li><a href="devices.html">Обслуговування КВП</a></li>
+        <li><a href="photo.html">Фотофіксація</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <h1>Виконання робіт</h1>
+    <p>Оберіть розділ:</p>
+    <div class="works-links">
+      <a href="schedule.html" class="btn">Графік проведення робіт</a>
+      <a href="inspection.html" class="btn">Технічний огляд</a>
+      <a href="adjustment.html" class="btn">Регулювання</a>
+      <a href="maintenance.html" class="btn">Технічне обслуговування</a>
+      <a href="repair.html" class="btn">Плановий ремонт</a>
+      <a href="devices.html" class="btn">Обслуговування КВП</a>
+      <a href="photo.html" class="btn">Фотофіксація</a>
+    </div>
+  </main>
+</body>
+</html>

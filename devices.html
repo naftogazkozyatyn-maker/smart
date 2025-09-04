@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обслуговування КВП</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">Smart Energy</div>
+    <nav class="desktop-menu">
+      <ul>
+        <li><a href="documentation.html">Технічна документація</a></li>
+        <li><a href="works.html">Виконання робіт</a>
+          <ul>
+            <li><a href="schedule.html">Графіки проведення робіт</a></li>
+            <li><a href="inspection.html">Технічний огляд</a></li>
+            <li><a href="adjustment.html">Регулювання</a></li>
+            <li><a href="maintenance.html">Технічне обслуговування</a></li>
+            <li><a href="repair.html">Плановий ремонт</a></li>
+            <li><a href="devices.html" class="active">Обслуговування КВП</a></li>
+            <li><a href="photo.html">Фотофіксація</a></li>
+          </ul>
+        </li>
+        <li><a href="instructions.html">Інструкції та навчальні відео</a></li>
+      </ul>
+    </nav>
+
+    <!-- Мобільне меню -->
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="menu-header">
+        <button onclick="goBack()">←</button>
+        <span id="menuTitle">Обслуговування КВП</span>
+        <button onclick="closeMenu()">✖</button>
+      </div>
+      <ul id="menuContent">
+        <li><a href="schedule.html">Графіки проведення робіт</a></li>
+        <li><a href="inspection.html">Технічний огляд</a></li>
+        <li><a href="adjustment.html">Регулювання</a></li>
+        <li><a href="maintenance.html">Технічне обслуговування</a></li>
+        <li><a href="repair.html">Плановий ремонт</a></li>
+        <li><a href="devices.html" class="active">Обслуговування КВП</a></li>
+        <li><a href="photo.html">Фотофіксація</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <h1>Обслуговування контрольно-вимірювальних приладів</h1>
+    <form id="devicesForm">
+      <label><input type="checkbox" id="device1"> Перевірка манометра</label>
+      <input type="text" id="device1_note" disabled placeholder="Примітка"><br>
+
+      <label><input type="checkbox" id="device2"> Перевірка термометра</label>
+      <input type="text" id="device2_note" disabled placeholder="Примітка"><br>
+
+      <label><input type="checkbox" id="device3"> Перевірка сигналізатора тиску</label>
+      <input type="text" id="device3_note" disabled placeholder="Примітка"><br>
+    </form>
+  </main>
+</body>
+</html>
