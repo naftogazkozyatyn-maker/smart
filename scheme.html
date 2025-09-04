@@ -1,127 +1,105 @@
 <!DOCTYPE html>
 <html lang='uk'>
-  <head>
-    <meta charset='UTF-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Принципова схема обладнання</title>
-    <link rel='stylesheet' href='css/style.css'>
-.scheme-icon{
-  width:600px;        /* розмір значка — змінюйте при потребі */
-  height:600px;
-  vertical-align:middle;
-  margin-right:8px;
-  display:inline-block;
-}
-@media (max-width:480px){
-  .scheme-icon{ width:18px; height:18px; margin-right:6px; }
-}
-    
-  </head>
-  <body>
-  <header>
-    <div class="logo">Smart Energy</div>
-    <nav class="desktop-menu">
-      <ul>
-        <li><a href="documentation.html">Технічна документація</a>
-          <ul>
-            <li><a href="passport.html">Протокол ПРГ</a></li>
-            <li><a href="project.html">Робочий проект</a></li>
-            <li><a href="docs.html">Виконавчо-технічна документація</a></li>
-            <li><a href="scheme.html">Принципова схема ПРГ</a></li>
-            <li><a href="mode.html">Режимна картка роботи обладнання</a></li>
-          </ul>
-        </li>
-        <li><a href="works.html">Виконання робіт</a>
-          <ul>
-            <li><a href="list_prg.html">Графіки проведення робіт</a></li>
-            <li><a href="inspection.html">Технічний огляд</a></li>
-            <li><a href="adjustment.html">Регулювання</a></li>
-            <li><a href="maintenance.html">Технічне обслуговування</a></li>
-            <li><a href="repair.html">Плановий ремонт</a></li>
-            <li><a href="devices.html">Обслуговування КВП</a></li>
-            <li><a href="photo.html">Фотофіксація</a></li>
-          </ul>
-        </li>
-        <li><a href="instructions.html">Інструкції та навчальні відео</a></li>
-          <ul>
-            <li><a href="instructions.html">Інструкції</a></li>
-            <li><a href="videos.html">Відео</a></li>
-          </ul>
-      </ul>
-    </nav>
+<head>
+  <meta charset='UTF-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Принципова схема обладнання</title>
+  <link rel='stylesheet' href='css/style.css'>
 
-<!-- Бургер -->
-<div class="burger">☰</div>
-
-<!-- Мобільне меню -->
-<div id="mobileMenu" class="mobile-menu">
-  <div class="menu-header">
-    <button onclick="goBack()">←</button>
-    <span id="menuTitle">Сервіс</span>
-    <button onclick="closeMenu()">✖</button>
-  </div>
-  <ul id="menuContent">
-    <li onclick="openSubmenu('documentation', 'Технічна документація')">Технічна документація</li>
-    <li onclick="openSubmenu('works', 'Виконання робіт')">Виконання робіт</li>
-    <li onclick="openSubmenu('instructions', 'Інструкції та навчальні відео')">Інструкції та навчальні відео</li>
-  </ul>
-</div>
-  </header>
-
-    
-    <h2>Принципова схема обладнання</h2>
-    <ul>
-
-        <li><a href="docs/1_scheme.pdf" >Принципова схема ШГРП</a></li>
-        <li><a href="docs/2_regime.pdf" >Режимна карта робота обладнання</a></li>
-
-      <center><img src="img/1_scheme.jpg" alt="Схема" class="scheme-icon" </center>
-      <center><img src="img/2_regime.jpg" alt="Схема" class="scheme-icon" </center>
-      
-      <li><a href="service.html">Повернутись назад</a> |
-      </li>
-    </ul>
-  
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector(".menu-toggle");
-    const menu = document.querySelector("nav");
-
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => {
-        menu.classList.toggle("active");
-      });
+  <style>
+    /* Картинки займають всю доступну ширину, але не більше 100% */
+    .scheme-icon {
+      max-width: 100%;
+      height: auto;
+      cursor: zoom-in;
+      display: block;
+      margin: 10px auto;
     }
 
-    // Десктоп: підменю при hover
-    const items = document.querySelectorAll("nav ul li");
-    items.forEach(item => {
-      item.addEventListener("mouseenter", () => {
-        if (window.innerWidth > 768) {
-          let submenu = item.querySelector("ul");
-          if (submenu) submenu.style.display = "block";
-        }
-      });
-      item.addEventListener("mouseleave", () => {
-        if (window.innerWidth > 768) {
-          let submenu = item.querySelector("ul");
-          if (submenu) submenu.style.display = "none";
-        }
-      });
+    /* Стилі для модального вікна */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
 
-      // Мобільні: підменю по кліку
-      item.addEventListener("click", (e) => {
-        if (window.innerWidth <= 768) {
-          let submenu = item.querySelector("ul");
-          if (submenu) {
-            e.preventDefault();
-            item.classList.toggle("active");
-          }
-        }
-      });
-    });
-  });
-</script>
+    .lightbox img {
+      display: block;
+      margin: auto;
+      max-width: 95%;
+      max-height: 90vh;
+    }
 
-</body>
+    .lightbox:target {
+      display: block;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">Smart Energy</div>
+  <nav class="desktop-menu">
+    <ul>
+      <li><a href="documentation.html">Технічна документація</a>
+        <ul>
+          <li><a href="passport.html">Протокол ПРГ</a></li>
+          <li><a href="project.html">Робочий проект</a></li>
+          <li><a href="docs.html">Виконавчо-технічна документація</a></li>
+          <li><a href="scheme.html">Принципова схема ПРГ</a></li>
+          <li><a href="mode.html">Режимна картка роботи обладнання</a></li>
+        </ul>
+      </li>
+      <li><a href="works.html">Виконання робіт</a>
+        <ul>
+          <li><a href="list_prg.html">Графіки проведення робіт</a></li>
+          <li><a href="inspection.html">Технічний огляд</a></li>
+          <li><a href="adjustment.html">Регулювання</a></li>
+          <li><a href="maintenance.html">Технічне обслуговування</a></li>
+          <li><a href="repair.html">Плановий ремонт</a></li>
+          <li><a href="devices.html">Обслуговування КВП</a></li>
+          <li><a href="photo.html">Фотофіксація</a></li>
+        </ul>
+      </li>
+      <li><a href="instructions.html">Інструкції та навчальні відео</a></li>
+        <ul>
+          <li><a href="instructions.html">Інструкції</a></li>
+          <li><a href="videos.html">Відео</a></li>
+        </ul>
+    </ul>
+  </nav>
+</header>
+
+<h2>Принципова схема обладнання</h2>
+<ul>
+  <li><a href="docs/1_scheme.pdf">Принципова схема ШГРП</a></li>
+  <li><a href="docs/2_regime.pdf">Режимна карта робота обладнання</a></li>
+
+  <!-- Картинка з посиланням для відкриття -->
+  <a href="#img1">
+    <img src="img/1_scheme.jpg" alt="Схема 1" class="scheme-icon">
+  </a>
+  <a href="#img2">
+    <img src="img/2_regime.jpg" alt="Схема 2" class="scheme-icon">
+  </a>
+
+  <li><a href="service.html">Повернутись назад</a></li>
+</ul>
+
+<!-- Лайтбокс для
