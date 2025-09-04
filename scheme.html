@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сервіс</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
+<html lang='uk'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Принципова схема ПРГ</title>
+    <link rel='stylesheet' href='css/style.css'>
+  </head>
+  <body>
+        <header>
     <div id="equipment-id" class="equipment-id">Номер обладнання: - </div>
-          <span class="user-info">Ви увійшли як: User (Role)</span>
- 
+
 <div class="burger-menu" onclick="toggleMenu()">☰</div>
 <nav id="sideMenu" class="side-menu">
   <div class="close-btn" onclick="toggleMenu()">✖</div>
@@ -44,17 +43,17 @@
     </li>
   </ul>
 </nav>
-      
+          <span class="user-info">Ви увійшли як: User (Role)</span>
 </header>
- 
-  <h1>Сервісна сторінка</h1>
+    <h2>Принципова схема обладнання ПРГ</h2>
     <ul>
-    <a href="docs.html">Технічна документація</a>  |
-    <a href="works.html">Виконання робіт</a>  |
-    <a href="instructions.html">Інструкції та відео</a>  |
-    </ul>
-  <div id="userInfo"></div>
+        <li><a href="docs/1_scheme.pdf">Принципова схема ПРГ</a></li>
   
+      <li><a href="service.html">Повернутись назад</a> |
+      </li>
+    </ul>
+  
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.querySelector(".menu-toggle");
