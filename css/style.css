@@ -1,0 +1,177 @@
+/* ===== Загальні стилі ===== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+h1, h2, h3 {
+  margin: 15px 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 6px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f172a;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+}
+
+header .logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* ===== Десктопне меню ===== */
+.desktop-menu ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-menu li {
+  position: relative;
+}
+
+.desktop-menu > ul > li {
+  margin: 0 15px;
+}
+
+.desktop-menu a {
+  color: white;
+  padding: 8px 12px;
+  display: block;
+}
+
+.desktop-menu a:hover,
+.desktop-menu .active {
+  background: #2563eb;
+  border-radius: 4px;
+}
+
+/* Випадаючі підменю */
+.desktop-menu li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1e293b;
+  padding: 10px 0;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.desktop-menu li:hover ul {
+  display: block;
+}
+
+.desktop-menu li ul li {
+  margin: 0;
+}
+
+.desktop-menu li ul a {
+  padding: 8px 15px;
+  color: white;
+}
+
+.desktop-menu li ul a:hover {
+  background: #2563eb;
+}
+
+/* ===== Бургер-меню (мобільне) ===== */
+.burger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100%;
+  background: #1e293b;
+  color: white;
+  padding: 0;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  flex-direction: column;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu .menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f172a;
+  padding: 10px;
+}
+
+.mobile-menu .menu-header span {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.mobile-menu li {
+  border-bottom: 1px solid #334155;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 12px;
+  color: white;
+}
+
+.mobile-menu a:hover {
+  background: #2563eb;
+}
+
+/* ===== Адаптивність ===== */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+}
