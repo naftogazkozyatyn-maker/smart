@@ -64,45 +64,6 @@
     </ul>
   
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector(".menu-toggle");
-    const menu = document.querySelector("nav");
 
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => {
-        menu.classList.toggle("active");
-      });
-    }
-
-    // Десктоп: підменю при hover
-    const items = document.querySelectorAll("nav ul li");
-    items.forEach(item => {
-      item.addEventListener("mouseenter", () => {
-        if (window.innerWidth > 768) {
-          let submenu = item.querySelector("ul");
-          if (submenu) submenu.style.display = "block";
-        }
-      });
-      item.addEventListener("mouseleave", () => {
-        if (window.innerWidth > 768) {
-          let submenu = item.querySelector("ul");
-          if (submenu) submenu.style.display = "none";
-        }
-      });
-
-      // Мобільні: підменю по кліку
-      item.addEventListener("click", (e) => {
-        if (window.innerWidth <= 768) {
-          let submenu = item.querySelector("ul");
-          if (submenu) {
-            e.preventDefault();
-            item.classList.toggle("active");
-          }
-        }
-      });
-    });
-  });
-</script>
 
 </body>
