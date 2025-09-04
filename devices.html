@@ -57,17 +57,93 @@
   </header>
 
   <main>
-    <h1>Обслуговування контрольно-вимірювальних приладів</h1>
-    <form id="devicesForm">
-      <label><input type="checkbox" id="device1"> Перевірка манометра</label>
-      <input type="text" id="device1_note" disabled placeholder="Примітка"><br>
+    <h2>Обслуговування контрольно-вимірювальних пристроїв</h2>
 
-      <label><input type="checkbox" id="device2"> Перевірка термометра</label>
-      <input type="text" id="device2_note" disabled placeholder="Примітка"><br>
+ <p>Форма для технічного огляду</p>
+      <form id="inspectionForm">
+    <fieldset>
+      <legend>Лінія 1</legend>
+      <label>
+        <input type="checkbox" id="line1_status"> ВКЛ/ВИКЛ
+      </label><br><br>
 
-      <label><input type="checkbox" id="device3"> Перевірка сигналізатора тиску</label>
-      <input type="text" id="device3_note" disabled placeholder="Примітка"><br>
-    </form>
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line1_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line1_out" disabled> МПа
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Лінія 2</legend>
+      <label>
+        <input type="checkbox" id="line2_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line2_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line2_out" disabled> МПа
+      </label>
+    </fieldset>
+        
+<h3>Усунуто витоків газу</h3>
+    
+    <fieldset>
+      <legend>на лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>на газопроводі високого тиску:
+        <input type="number" step="1" id="line1_leak3" disabled> шт
+      </label><br><br>
+
+      <label>на газопроводі середнього тиску:
+        <input type="number" step="1" id="line1_leak2" disabled> шт
+      </label> 
+
+      <label>на газопроводі низького тиску:
+        <input type="number" step="1" id="line1_leak1" disabled> шт
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>на лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>на газопроводі високого тиску:
+        <input type="number" step="1" id="line2_leak3" disabled> шт
+      </label><br><br>
+
+      <label>на газопроводі середнього тиску:
+        <input type="number" step="1" id="line2_leak2" disabled> шт
+      </label> 
+
+      <label>на газопроводі низького тиску:
+        <input type="number" step="1" id="line2_leak1" disabled> шт
+      </label>
+    </fieldset>
+        
+<p>Форма для обслуговування КВП</p>
+
+    <p>Кількість знятих манометрів </p>
+    <p>Кількість встановлених манометрів</p>
+    <p>Кількість знятих напоромірів</p>
+    <p>Кількість встановлених напоромірів</p>
+
+        <button type="submit">Передати дані</button>
+  </form>
+
+        <ul>
+      <a href="works.html">Повернутись назад</a> |
+    </ul>
   </main>
 </body>
 </html>
