@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Каталог графіків ПРГ</title>
+<style>
+:root{--bg:#f7f9fc;--card:#fff;--text:#111827;--muted:#6b7280;--brand:#2563eb}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Noto Sans',Arial; background:var(--bg); margin:0; padding:24px; color:var(--text)}
+h1{margin:0 0 16px}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}
+.toolbar input[type="search"]{flex:1 1 260px;padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;outline:none}
+.btn{padding:8px 12px;border-radius:10px;border:1px solid #e5e7eb;background:#fff;cursor:pointer;color:#374151}
+.btn.active{background:#e0ebff;border-color:#c7dbff;color:#1d4ed8}
+.table-wrap{overflow:auto;border-radius:12px;box-shadow:0 1px 6px rgba(0,0,0,.06);background:var(--card)}
+table{width:100%;border-collapse:collapse;min-width:760px}
+thead th{position:sticky;top:0;background:#f3f4f6;text-align:left;font-weight:600;border-bottom:1px solid #e5e7eb;padding:12px}
+tbody td{padding:12px;border-bottom:1px solid #f1f5f9}
+tbody tr:nth-child(even){background:#fafafa}
+tbody tr:hover{background:#f1f5ff}
+.badge{padding:4px 10px;border-radius:999px;font-weight:700;font-size:.85rem;display:inline-block}
+.badge.done{background:#d4edda;color:#155724}
+.badge.urgent{background:#f8d7da;color:#721c24}
+.badge.pending{background:#fff3cd;color:#856404}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.footer{color:#6b7280;font-size:.875rem;margin-top:12px}
+</style>
+<link rel='stylesheet' href='css/style.css'>
+</head>
+<body>
+  <header>
+    <button id="burger">☰</button>
+    <nav id="desktopMenu">
+      <ul>
+        <li>Технічна документація
+          <ul>
+            <li><a href="passport.html">Протокол ПРГ</a></li>
+            <li><a href="project.html">Робочий проект</a></li>
+            <li><a href="docs.html">Виконавчо-технічна документація</a></li>
+            <li><a href="scheme.html">Принципова схема ПРГ</a></li>
+            <li><a href="mode.html">Режимна картка</a></li>
+          </ul>
+        </li>
+        <li>Виконання робіт
+          <ul>
+            <li><a href="schedule.html">Графік робіт</a></li>
+            <li><a href="inspection.html">Технічний огляд</a></li>
+            <li><a href="adjustment.html">Регулювання</a></li>
+            <li><a href="maintenance.html">ТО</a></li>
+            <li><a href="repair.html">Плановий ремонт</a></li>
+            <li><a href="devices.html">Обслуговування КВП</a></li>
+            <li><a href="photo.html">Фотофіксація</a></li>
+          </ul>
+        </li>
+        <li><a href="instructions.html">Інструкції та відео</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="mobileMenu" class="menu">
+    <div class="menu-header">
+      <button id="backMenu">←</button>
+      <span id="menuTitle"></span>
+      <button id="closeMenu">✖</button>
+    </div>
+    <ul></ul>
+  </div>
+  
+
+</head><body>
+<h1>Каталог графіків ПРГ</h1>
+<div class="toolbar">
+  <input id="search" type="search" placeholder="Пошук за адресою або номером об'єкта…" />
+  <button class="btn active" data-filter="all">Показати всі</button>
+  <button class="btn" data-filter="done">Виконано</button>
+  <button class="btn" data-filter="pending">Очікує</button>
+  <button class="btn" data-filter="urgent">ТЕРМІНОВО</button>
+</div>
+<div class="table-wrap"><table>
+<thead><tr><th style="width:64px">№</th><th>Обладнання</th><th>Адреса</th><th style="width:160px">Статус</th><th style="width:120px">Графік</th></tr></thead>
+<tbody>
+<tr data-status="pending"><td>1</td><td><a href="docs/excel/ПГБ_01150001.html">ПГБ 01150001</a></td><td>Хмільницький район, м.Калинівка, Козацька</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150001.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>2</td><td><a href="docs/excel/ГРП_01150002.html">ГРП 01150002</a></td><td>Хмільницький район, м.Вінниця, Вишнева</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ГРП_01150002.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>3</td><td><a href="docs/excel/ПГБ_01150003.html">ПГБ 01150003</a></td><td>Жмеринський район, смт.Томашпіль, Вишнева</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150003.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>4</td><td><a href="docs/excel/ПГБ_01150004.html">ПГБ 01150004</a></td><td>Вінницький район, м.Калинівка, Варщицька</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150004.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>5</td><td><a href="docs/excel/ГРП_01150005.html">ГРП 01150005</a></td><td>Хмільницький район, м.Вінниця, Миру</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ГРП_01150005.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>6</td><td><a href="docs/excel/ПГБ_01150006.html">ПГБ 01150006</a></td><td>Хмільницький район, смт.Томашпіль, Шевченка</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150006.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>7</td><td><a href="docs/excel/ПГБ_01150007.html">ПГБ 01150007</a></td><td>Жмеринський район, м.Гнівань, Миру</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150007.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>8</td><td><a href="docs/excel/ШГРП_01150008.html">ШГРП 01150008</a></td><td>Хмільницький район, м.Жмеринка, Польова</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ШГРП_01150008.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>9</td><td><a href="docs/excel/ШГРП_01150009.html">ШГРП 01150009</a></td><td>Хмільницький район, м.Вінниця, Лісова</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ШГРП_01150009.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>10</td><td><a href="docs/excel/ШГРП_01150010.html">ШГРП 01150010</a></td><td>Вінницький район, м.Вінниця, Шевченка</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ШГРП_01150010.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>11</td><td><a href="docs/excel/ШГРП_01150011.html">ШГРП 01150011</a></td><td>Хмільницький район, м.Калинівка, Лісова</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ШГРП_01150011.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>12</td><td><a href="docs/excel/ГРП_01150012.html">ГРП 01150012</a></td><td>Вінницький район, смт.Тиврів, Польова</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ГРП_01150012.html">Відкрити</a></td></tr>
+<tr data-status="urgent"><td>13</td><td><a href="docs/excel/ШГРП_01150013.html">ШГРП 01150013</a></td><td>Хмільницький район, м.Гнівань, Сонячна</td><td><span class="badge urgent">ТЕРМІНОВО</span></td><td><a href="docs/excel/ШГРП_01150013.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>14</td><td><a href="docs/excel/ПГБ_01150014.html">ПГБ 01150014</a></td><td>Хмільницький район, м.Жмеринка, Вишнева</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150014.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>15</td><td><a href="docs/excel/ПГБ_01150015.html">ПГБ 01150015</a></td><td>Вінницький район, м.Гнівань, Польова</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150015.html">Відкрити</a></td></tr>
+<tr data-status="urgent"><td>16</td><td><a href="docs/excel/ШГРП_01150016.html">ШГРП 01150016</a></td><td>Жмеринський район, м.Вінниця, Вишнева</td><td><span class="badge urgent">ТЕРМІНОВО</span></td><td><a href="docs/excel/ШГРП_01150016.html">Відкрити</a></td></tr>
+<tr data-status="done"><td>17</td><td><a href="docs/excel/ГРП_01150017.html">ГРП 01150017</a></td><td>Жмеринський район, м.Вінниця, Козацька</td><td><span class="badge done">Виконано</span></td><td><a href="docs/excel/ГРП_01150017.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>18</td><td><a href="docs/excel/ГРП_01150018.html">ГРП 01150018</a></td><td>Хмільницький район, м.Калинівка, Лісова</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ГРП_01150018.html">Відкрити</a></td></tr>
+<tr data-status="done"><td>19</td><td><a href="docs/excel/ШГРП_01150019.html">ШГРП 01150019</a></td><td>Вінницький район, м.Гнівань, Грушевського</td><td><span class="badge done">Виконано</span></td><td><a href="docs/excel/ШГРП_01150019.html">Відкрити</a></td></tr>
+<tr data-status="urgent"><td>20</td><td><a href="docs/excel/ГРП_01150020.html">ГРП 01150020</a></td><td>Вінницький район, смт.Тиврів, Шевченка</td><td><span class="badge urgent">ТЕРМІНОВО</span></td><td><a href="docs/excel/ГРП_01150020.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>21</td><td><a href="docs/excel/ПГБ_01150021.html">ПГБ 01150021</a></td><td>Вінницький район, м.Гнівань, Вишнева</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150021.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>22</td><td><a href="docs/excel/ПГБ_01150022.html">ПГБ 01150022</a></td><td>Жмеринський район, м.Вінниця, Миру</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150022.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>23</td><td><a href="docs/excel/ПГБ_01150023.html">ПГБ 01150023</a></td><td>Хмільницький район, м.Вінниця, Сонячна</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150023.html">Відкрити</a></td></tr>
+<tr data-status="urgent"><td>24</td><td><a href="docs/excel/ШГРП_01150024.html">ШГРП 01150024</a></td><td>Вінницький район, м.Гнівань, Миру</td><td><span class="badge urgent">ТЕРМІНОВО</span></td><td><a href="docs/excel/ШГРП_01150024.html">Відкрити</a></td></tr>
+<tr data-status="done"><td>25</td><td><a href="docs/excel/ГРП_01150025.html">ГРП 01150025</a></td><td>Жмеринський район, смт.Тиврів, Варщицька</td><td><span class="badge done">Виконано</span></td><td><a href="docs/excel/ГРП_01150025.html">Відкрити</a></td></tr>
+<tr data-status="urgent"><td>26</td><td><a href="docs/excel/ГРП_01150026.html">ГРП 01150026</a></td><td>Хмільницький район, смт.Тиврів, Лісова</td><td><span class="badge urgent">ТЕРМІНОВО</span></td><td><a href="docs/excel/ГРП_01150026.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>27</td><td><a href="docs/excel/ШГРП_01150027.html">ШГРП 01150027</a></td><td>Хмільницький район, м.Вінниця, Польова</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ШГРП_01150027.html">Відкрити</a></td></tr>
+<tr data-status="done"><td>28</td><td><a href="docs/excel/ПГБ_01150028.html">ПГБ 01150028</a></td><td>Вінницький район, м.Вінниця, Сонячна</td><td><span class="badge done">Виконано</span></td><td><a href="docs/excel/ПГБ_01150028.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>29</td><td><a href="docs/excel/ШГРП_01150029.html">ШГРП 01150029</a></td><td>Жмеринський район, м.Жмеринка, Медична</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ШГРП_01150029.html">Відкрити</a></td></tr>
+<tr data-status="done"><td>30</td><td><a href="docs/excel/ШГРП_01150030.html">ШГРП 01150030</a></td><td>Хмільницький район, м.Вінниця, Миру</td><td><span class="badge done">Виконано</span></td><td><a href="docs/excel/ШГРП_01150030.html">Відкрити</a></td></tr>
+<tr data-status="urgent"><td>31</td><td><a href="docs/excel/ПГБ_01150031.html">ПГБ 01150031</a></td><td>Вінницький район, м.Гнівань, Польова</td><td><span class="badge urgent">ТЕРМІНОВО</span></td><td><a href="docs/excel/ПГБ_01150031.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>32</td><td><a href="docs/excel/ШГРП_01150032.html">ШГРП 01150032</a></td><td>Жмеринський район, м.Жмеринка, Грушевського</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ШГРП_01150032.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>33</td><td><a href="docs/excel/ГРП_01150033.html">ГРП 01150033</a></td><td>Хмільницький район, смт.Томашпіль, Сонячна</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ГРП_01150033.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>34</td><td><a href="docs/excel/ГРП_01150034.html">ГРП 01150034</a></td><td>Хмільницький район, м.Калинівка, Медична</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ГРП_01150034.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>35</td><td><a href="docs/excel/ПГБ_01150035.html">ПГБ 01150035</a></td><td>Хмільницький район, м.Гнівань, Лісова</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150035.html">Відкрити</a></td></tr>
+<tr data-status="done"><td>36</td><td><a href="docs/excel/ПГБ_01150036.html">ПГБ 01150036</a></td><td>Хмільницький район, м.Жмеринка, Лісова</td><td><span class="badge done">Виконано</span></td><td><a href="docs/excel/ПГБ_01150036.html">Відкрити</a></td></tr>
+<tr data-status="urgent"><td>37</td><td><a href="docs/excel/ПГБ_01150037.html">ПГБ 01150037</a></td><td>Вінницький район, смт.Томашпіль, Козацька</td><td><span class="badge urgent">ТЕРМІНОВО</span></td><td><a href="docs/excel/ПГБ_01150037.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>38</td><td><a href="docs/excel/ПГБ_01150038.html">ПГБ 01150038</a></td><td>Хмільницький район, м.Гнівань, Вишнева</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150038.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>39</td><td><a href="docs/excel/ПГБ_01150039.html">ПГБ 01150039</a></td><td>Жмеринський район, смт.Тиврів, Грушевського</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150039.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>40</td><td><a href="docs/excel/ГРП_01150040.html">ГРП 01150040</a></td><td>Вінницький район, м.Жмеринка, Медична</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ГРП_01150040.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>41</td><td><a href="docs/excel/ШГРП_01150041.html">ШГРП 01150041</a></td><td>Хмільницький район, м.Гнівань, Козацька</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ШГРП_01150041.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>42</td><td><a href="docs/excel/ПГБ_01150042.html">ПГБ 01150042</a></td><td>Хмільницький район, смт.Томашпіль, Вишнева</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150042.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>43</td><td><a href="docs/excel/ПГБ_01150043.html">ПГБ 01150043</a></td><td>Вінницький район, м.Гнівань, Миру</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150043.html">Відкрити</a></td></tr>
+<tr data-status="urgent"><td>44</td><td><a href="docs/excel/ПГБ_01150044.html">ПГБ 01150044</a></td><td>Хмільницький район, м.Вінниця, Грушевського</td><td><span class="badge urgent">ТЕРМІНОВО</span></td><td><a href="docs/excel/ПГБ_01150044.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>45</td><td><a href="docs/excel/ГРП_01150045.html">ГРП 01150045</a></td><td>Жмеринський район, смт.Томашпіль, Варщицька</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ГРП_01150045.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>46</td><td><a href="docs/excel/ПГБ_01150046.html">ПГБ 01150046</a></td><td>Вінницький район, м.Жмеринка, Варщицька</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150046.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>47</td><td><a href="docs/excel/ГРП_01150047.html">ГРП 01150047</a></td><td>Вінницький район, смт.Тиврів, Шевченка</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ГРП_01150047.html">Відкрити</a></td></tr>
+<tr data-status="done"><td>48</td><td><a href="docs/excel/ГРП_01150048.html">ГРП 01150048</a></td><td>Хмільницький район, смт.Томашпіль, Вишнева</td><td><span class="badge done">Виконано</span></td><td><a href="docs/excel/ГРП_01150048.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>49</td><td><a href="docs/excel/ГРП_01150049.html">ГРП 01150049</a></td><td>Жмеринський район, м.Жмеринка, Вишнева</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ГРП_01150049.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>50</td><td><a href="docs/excel/ПГБ_01150050.html">ПГБ 01150050</a></td><td>Хмільницький район, м.Вінниця, Сонячна</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150050.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>51</td><td><a href="docs/excel/ПГБ_01150051.html">ПГБ 01150051</a></td><td>Хмільницький район, смт.Тиврів, Миру</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150051.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>52</td><td><a href="docs/excel/ПГБ_01150052.html">ПГБ 01150052</a></td><td>Вінницький район, м.Вінниця, Миру</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150052.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>53</td><td><a href="docs/excel/ПГБ_01150053.html">ПГБ 01150053</a></td><td>Жмеринський район, м.Вінниця, Козацька</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150053.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>54</td><td><a href="docs/excel/ШГРП_01150054.html">ШГРП 01150054</a></td><td>Жмеринський район, м.Гнівань, Грушевського</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ШГРП_01150054.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>55</td><td><a href="docs/excel/ШГРП_01150055.html">ШГРП 01150055</a></td><td>Жмеринський район, м.Жмеринка, Вишнева</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ШГРП_01150055.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>56</td><td><a href="docs/excel/ГРП_01150056.html">ГРП 01150056</a></td><td>Хмільницький район, м.Калинівка, Грушевського</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ГРП_01150056.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>57</td><td><a href="docs/excel/ГРП_01150057.html">ГРП 01150057</a></td><td>Жмеринський район, смт.Томашпіль, Шевченка</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ГРП_01150057.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>58</td><td><a href="docs/excel/ПГБ_01150058.html">ПГБ 01150058</a></td><td>Хмільницький район, м.Калинівка, Вишнева</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150058.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>59</td><td><a href="docs/excel/ПГБ_01150059.html">ПГБ 01150059</a></td><td>Жмеринський район, м.Калинівка, Шевченка</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ПГБ_01150059.html">Відкрити</a></td></tr>
+<tr data-status="pending"><td>60</td><td><a href="docs/excel/ГРП_01150060.html">ГРП 01150060</a></td><td>Хмільницький район, смт.Тиврів, Вишнева</td><td><span class="badge pending">Очікує</span></td><td><a href="docs/excel/ГРП_01150060.html">Відкрити</a></td></tr></tbody></table></div>
+<div class="footer">Демо-розподіл статусів: 8 терміново, 45 очікує, 7 виконано.</div>
+<script>
+const rows = Array.from(document.querySelectorAll('tbody tr'));
+const search = document.querySelector('#search');
+const buttons = document.querySelectorAll('.btn[data-filter]');
+let current = 'all';
+
+function applyFilters(){
+  const q = search.value.trim().toLowerCase();
+  rows.forEach(tr=>{
+    const status = tr.dataset.status;
+    const text = tr.textContent.toLowerCase();
+    const matchFilter = (current==='all' || status===current);
+    const matchSearch = (!q || text.includes(q));
+    tr.style.display = (matchFilter && matchSearch) ? '' : 'none';
+  });
+}
+
+search.addEventListener('input', applyFilters);
+buttons.forEach(btn=>btn.addEventListener('click', ()=>{
+  buttons.forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  current = btn.dataset.filter;
+  applyFilters();
+}));
+</script>
+</body></html>
