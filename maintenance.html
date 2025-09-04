@@ -57,24 +57,171 @@
   </header>
 
   <main>
-    <h1>Технічне обслуговування</h1>
-    <form id="maintenanceForm">
-      <label><input type="checkbox" id="line1_filter_in"> Лінія 1 – вхідний фільтр</label>
-      <input type="text" id="line1_filter_out" disabled placeholder="Вихідний фільтр"><br>
+ <h2>Технічне обслуговування</h2>
+    <h3>Форма для технічного огляду</h3>
+      <form id="inspectionForm">
+    <p>Замір тиску газо по кожній задіяній лінії:</p>
+    <fieldset>
+      <legend>Лінія 1</legend>
+      <label>
+        <input type="checkbox" id="line1_status"> ВКЛ/ВИКЛ
+      </label><br><br>
 
-      <label><input type="checkbox" id="line1_regulator"> Лінія 1 – регулятор</label>
-      <input type="text" id="line1_zzk" disabled placeholder="ЗЗК">
-      <input type="text" id="line1_zsk" disabled placeholder="ЗСК">
-      <input type="text" id="line1_vp" disabled placeholder="ВП"><br>
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line1_in" disabled> МПа
+      </label><br><br>
 
-      <label><input type="checkbox" id="line2_filter_in"> Лінія 2 – вхідний фільтр</label>
-      <input type="text" id="line2_filter_out" disabled placeholder="Вихідний фільтр"><br>
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line1_out" disabled> МПа
+      </label>
+    </fieldset>
 
-      <label><input type="checkbox" id="line2_regulator"> Лінія 2 – регулятор</label>
-      <input type="text" id="line2_zzk" disabled placeholder="ЗЗК">
-      <input type="text" id="line2_zsk" disabled placeholder="ЗСК">
-      <input type="text" id="line2_vp" disabled placeholder="ВП"><br>
-    </form>
+    <fieldset>
+      <legend>Лінія 2</legend>
+      <label>
+        <input type="checkbox" id="line2_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>Замір тиску газу на вході:
+        <input type="number" step="0.01" id="line2_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході:
+        <input type="number" step="0.01" id="line2_out" disabled> МПа
+      </label>
+    </fieldset>
+
+  
+
+<h3>Форма для технічного обслуговування</h3>
+
+    <fieldset>
+      <legend>Лінія 1</legend>
+      <label>
+        <input type="checkbox" id="line1_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>Замір тиску газу на вході у фільтр:
+        <input type="number" step="0.01" id="line1_filter_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході з фільтра:
+        <input type="number" step="0.01" id="line1_filter_out" disabled> МПа
+      </label>
+    </fieldset>
+        
+    <fieldset>
+      <legend>Лінія 2</legend>
+      <label>
+        <input type="checkbox" id="line2_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>Замір тиску газу на вході у фільтр:
+        <input type="number" step="0.01" id="line2_filter_in" disabled> МПа
+      </label><br><br>
+
+      <label>Замір тиску газу на виході з фільтра:
+        <input type="number" step="0.01" id="line2_filter_out" disabled> МПа
+      </label>
+    </fieldset>
+
+  <h3>Під час проведення обслуговування було виконано:</h3>
+    <fieldset>     
+   <legend>на лінії 1</legend>
+      <legend>-очищення фільтра лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_filter_in"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну регулятора тиску лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_regulator"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну ЗЗК лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_zzk"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну ЗСК лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_zsk"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну відключаючих пристроїв лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_vp"> ВКЛ/ВИКЛ
+      </label><br><br>
+</fieldset>
+        
+       <fieldset>
+ <legend>на лінії 2</legend>       
+        
+        <legend>-очищення фільтра лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_filter_in"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну регулятора тиску лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_regulator"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну ЗЗК лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_zzk"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну ЗСК лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_zsk"> ВКЛ/ВИКЛ
+      </label><br><br>
+      <legend>-заміну відключаючих пристроїв лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_vp"> ВКЛ/ВИКЛ
+      </label><br><br>
+         </fieldset>
+        
+    <h3>Усунуто витоків газу</h3>
+    
+    <fieldset>
+      <legend>на лінії 1</legend>
+      <label>
+        <input type="checkbox" id="line1_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>на газопроводі високого тиску:
+        <input type="number" step="1" id="line1_leak3" disabled> шт
+      </label><br><br>
+
+      <label>на газопроводі середнього тиску:
+        <input type="number" step="1" id="line1_leak2" disabled> шт
+      </label> 
+
+      <label>на газопроводі низького тиску:
+        <input type="number" step="1" id="line1_leak1" disabled> шт
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>на лінії 2</legend>
+      <label>
+        <input type="checkbox" id="line2_status"> ВКЛ/ВИКЛ
+      </label><br><br>
+
+      <label>на газопроводі високого тиску:
+        <input type="number" step="1" id="line2_leak3" disabled> шт
+      </label><br><br>
+
+      <label>на газопроводі середнього тиску:
+        <input type="number" step="1" id="line2_leak2" disabled> шт
+      </label> 
+
+      <label>на газопроводі низького тиску:
+        <input type="number" step="1" id="line2_leak1" disabled> шт
+      </label>
+    </fieldset>
+        
+    <button type="submit">Передати дані</button>
+  </form>
+
+          <ul>
+      <a href="works.html">Повернутись назад</a> |
+    </ul>
+  
   </main>
 </body>
 </html>
