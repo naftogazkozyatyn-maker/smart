@@ -5,6 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Режимна картка роботи обладнання ПРГ</title>
     <link rel='stylesheet' href='css/style.css'>
+
+<style>
+    /* Картинки займають всю доступну ширину, але не більше 100% */
+    .scheme-icon {
+      max-width: 100%;
+      height: auto;
+      cursor: zoom-in;
+      display: block;
+      margin: 10px auto;
+    }
+
+    /* Стилі для модального вікна */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox img {
+      display: block;
+      margin: auto;
+      max-width: 95%;
+      max-height: 90vh;
+    }
+
+    .lightbox:target {
+      display: block;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+    
   </head>
 <body>
   <header>
@@ -62,6 +109,12 @@
         
         <li><a href="docs/2_regime.pdf">Режимна картка роботи обладнання ПРГ</a></li>
 
+ <!-- Картинка з посиланням для відкриття -->
+  <a href="#img2">
+    <img src="img/2_regime.jpg" alt="Схема 2" class="scheme-icon">
+  </a>
+
+      
       <li><a href="service.html">Повернутись назад</a> |
       </li>
     </ul>
