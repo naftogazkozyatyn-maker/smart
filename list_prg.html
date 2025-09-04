@@ -1,30 +1,37 @@
 <!DOCTYPE html>
-<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Каталог графіків ПРГ</title>
-<style>
-:root{--bg:#f7f9fc;--card:#fff;--text:#111827;--muted:#6b7280;--brand:#2563eb}
-*{box-sizing:border-box}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Noto Sans',Arial; background:var(--bg); margin:0; padding:24px; color:var(--text)}
-h1{margin:0 0 16px}
-.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 8px}
-.toolbar input[type="search"]{flex:1 1 260px;padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;outline:none}
-.btn{padding:8px 12px;border-radius:10px;border:1px solid #e5e7eb;background:#fff;cursor:pointer;color:#374151}
-.btn.active{background:#e0ebff;border-color:#c7dbff;color:#1d4ed8}
-.table-wrap{overflow:auto;border-radius:12px;box-shadow:0 1px 6px rgba(0,0,0,.06);background:var(--card)}
-table{width:100%;border-collapse:collapse;min-width:960px}
-thead th{position:sticky;top:0;background:#f3f4f6;text-align:left;font-weight:600;border-bottom:1px solid #e5e7eb;padding:12px}
-tbody td{padding:12px;border-bottom:1px solid #f1f5f9}
-tbody tr:nth-child(even){background:#fafafa}
-tbody tr:hover{background:#f1f5ff}
-.badge{padding:4px 10px;border-radius:999px;font-weight:700;font-size:.85rem;display:inline-block}
-.badge.done{background:#d4edda;color:#155724}
-.badge.urgent{background:#f8d7da;color:#721c24}
-.badge.pending{background:#fff3cd;color:#856404}
-a{color:var(--brand);text-decoration:none}
-a:hover{text-decoration:underline}
-.footer{color:#6b7280;font-size:.875rem;margin-top:12px}
-.counter{margin:8px 0 16px;color:#374151;font-weight:500}
-</style></head><body>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог графіків ПРГ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+  <style>
+    :root{--bg:#f7f9fc;--card:#fff;--text:#111827;--muted:#6b7280;--brand:#2563eb}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Noto Sans',Arial; background:var(--bg); margin:0; padding:24px; color:var(--text)}
+    h1{margin:0 0 16px}
+    .toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 8px}
+    .toolbar input[type="search"]{flex:1 1 260px;padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;outline:none}
+    .btn{padding:8px 12px;border-radius:10px;border:1px solid #e5e7eb;background:#fff;cursor:pointer;color:#374151}
+    .btn.active{background:#e0ebff;border-color:#c7dbff;color:#1d4ed8}
+    .table-wrap{overflow:auto;border-radius:12px;box-shadow:0 1px 6px rgba(0,0,0,.06);background:var(--card)}
+    table{width:100%;border-collapse:collapse;min-width:960px}
+    thead th{position:sticky;top:0;background:#f3f4f6;text-align:left;font-weight:600;border-bottom:1px solid #e5e7eb;padding:12px}
+    tbody td{padding:12px;border-bottom:1px solid #f1f5f9}
+    tbody tr:nth-child(even){background:#fafafa}
+    tbody tr:hover{background:#f1f5ff}
+    .badge{padding:4px 10px;border-radius:999px;font-weight:700;font-size:.85rem;display:inline-block}
+    .badge.done{background:#d4edda;color:#155724}
+    .badge.urgent{background:#f8d7da;color:#721c24}
+    .badge.pending{background:#fff3cd;color:#856404}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .footer{color:#6b7280;font-size:.875rem;margin-top:12px}
+    .counter{margin:8px 0 16px;color:#374151;font-weight:500}
+  </style>
+</head>
+<body>
 
   <header>
     <div class="logo">Smart Energy</div>
@@ -54,22 +61,22 @@ a:hover{text-decoration:underline}
       </ul>
     </nav>
 
-<!-- Бургер -->
-<div class="burger">☰</div>
+    <!-- Бургер -->
+    <div class="burger">☰</div>
 
-<!-- Мобільне меню -->
-<div id="mobileMenu" class="mobile-menu">
-  <div class="menu-header">
-    <button onclick="goBack()">←</button>
-    <span id="menuTitle">Сервіс</span>
-    <button onclick="closeMenu()">✖</button>
-  </div>
-  <ul id="menuContent">
-    <li onclick="openSubmenu('documentation', 'Технічна документація')">Технічна документація</li>
-    <li onclick="openSubmenu('works', 'Виконання робіт')">Виконання робіт</li>
-    <li onclick="openSubmenu('instructions', 'Інструкції та навчальні відео')">Інструкції та навчальні відео</li>
-  </ul>
-</div>
+    <!-- Мобільне меню -->
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="menu-header">
+        <button onclick="goBack()">←</button>
+        <span id="menuTitle">Сервіс</span>
+        <button onclick="closeMenu()">✖</button>
+      </div>
+      <ul id="menuContent">
+        <li onclick="openSubmenu('documentation', 'Технічна документація')">Технічна документація</li>
+        <li onclick="openSubmenu('works', 'Виконання робіт')">Виконання робіт</li>
+        <li onclick="openSubmenu('instructions', 'Інструкції та навчальні відео')">Інструкції та навчальні відео</li>
+      </ul>
+    </div>
   </header>
   
   <h1>Каталог графіків ПРГ</h1>
@@ -127,4 +134,5 @@ applyFilters();
 </script>
 
 </body></html>
+
 
