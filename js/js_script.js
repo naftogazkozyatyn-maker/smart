@@ -62,27 +62,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Функція задіювання чекбоксів
 document.addEventListener("DOMContentLoaded", () => {
-  const toggles = document.querySelectorAll(".line-toggle");
+  const toggles = document.querySelectorAll('.line-toggle');
 
   toggles.forEach(toggle => {
     const line = toggle.dataset.line;
+    const fields = document.querySelectorAll(`[data-line="${line}"]`);
 
-    // Отримуємо всі input-и для цієї лінії
-    const relatedFields = document.querySelectorAll(`[data-line="${line}"]`);
+    // Початковий стан при завантаженні
+    toggleFields(toggle.checked, fields);
 
-    // Первинне встановлення стану
-    toggleFields(toggle.checked, relatedFields);
-
-    // Обробка зміни стану
-    toggle.addEventListener("change", () => {
-      toggleFields(toggle.checked, relatedFields);
+    // Зміна стану при кліку
+    toggle.addEventListener('change', () => {
+      toggleFields(toggle.checked, fields);
     });
   });
 
-  function toggleFields(isEnabled, fields) {
+  function toggleFields(enabled, fields) {
     fields.forEach(field => {
-      if (field.tagName === "INPUT") {
-        field.disabled = !isEnabled;
+      if (field.tagName === "INPUT" || field.tagName === "SELECT") {
+        if (!field.classList.contains('line-toggle')) {
+          field.disabled = !enabled;
+        }
       }
     });
   }
