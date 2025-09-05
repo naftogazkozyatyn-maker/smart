@@ -87,3 +87,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+document.getElementById("fullForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // зупиняємо стандартну відправку
+
+  const formData = {};
+  const inputs = this.querySelectorAll("input");
+
+  inputs.forEach(input => {
+    const id = input.id;
+    const type = input.type;
+
+    if (type === "checkbox") {
+      formData[id] = input.checked;
+    } else if (type === "number") {
+      formData[id] = input.disabled ? null : parseFloat(input.value || 0);
+    }
+  });
+
+  console.log("📋 Дані для відправки:", formData);
+
+  // Якщо потрібно надіслати на сервер:
+  // fetch('/api/save', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify(formData)
+  // }).then(res => res.json()).then(data => {
+  //   alert('Дані збережено!');
+  // });
+
+  alert("✅ Дані зібрано. Перевір консоль.");
+});
+
