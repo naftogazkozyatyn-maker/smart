@@ -1,71 +1,124 @@
 <!DOCTYPE html>
-<html lang='uk'>
+<html lang="uk">
   <head>
-    <meta charset='UTF-8'>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Протокол ПРГ</title>
-    <link rel='stylesheet' href='css/style.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      .gallery {
+        position: relative;
+        max-width: 800px;
+        margin: 20px auto;
+        text-align: center;
+      }
+      .gallery img {
+        width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+        display: none;
+      }
+      .gallery img.active {
+        display: block;
+      }
+      .gallery button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: #fff;
+        border: none;
+        font-size: 2rem;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .gallery .prev {
+        left: 10px;
+      }
+      .gallery .next {
+        right: 10px;
+      }
+    </style>
+    <script>
+      let currentIndex = 0;
+      function showImage(index) {
+        const images = document.querySelectorAll(".gallery img");
+        if (index < 0) index = images.length - 1;
+        if (index >= images.length) index = 0;
+        images.forEach((img, i) => img.classList.toggle("active", i === index));
+        currentIndex = index;
+      }
+      function nextImage() { showImage(currentIndex + 1); }
+      function prevImage() { showImage(currentIndex - 1); }
+      document.addEventListener("DOMContentLoaded", () => showImage(0));
+    </script>
   </head>
- <body>
-  <header>
-    <div class="logo">Smart Energy</div>
-    <nav class="desktop-menu">
-      <ul>
-        <li><a href="documentation.html">Технічна документація</a>
-          <ul>
-            <li><a href="passport.html">Протокол ПРГ</a></li>
-            <li><a href="project.html">Робочий проект</a></li>
-            <li><a href="docs.html">Виконавчо-технічна документація</a></li>
-            <li><a href="scheme.html">Принципова схема ПРГ</a></li>
-            <li><a href="mode.html">Режимна картка роботи обладнання</a></li>
-          </ul>
-        </li>
-        <li><a href="works.html">Виконання робіт</a>
-          <ul>
-            <li><a href="list_prg.html">Графіки проведення робіт</a></li>
-            <li><a href="inspection.html">Технічний огляд</a></li>
-            <li><a href="adjustment.html">Регулювання</a></li>
-            <li><a href="maintenance.html">Технічне обслуговування</a></li>
-            <li><a href="repair.html">Плановий ремонт</a></li>
-            <li><a href="devices.html">Обслуговування КВП</a></li>
-            <li><a href="photo.html">Фотофіксація</a></li>
-          </ul>
-        </li>
-        <li><a href="instructions.html">Інструкції та навчальні відео</a></li>
-          <ul>
-            <li><a href="instructions.html">Інструкції</a></li>
-            <li><a href="videos.html">Відео</a></li>
-          </ul>
-      </ul>
-    </nav>
+  <body>
+    <header>
+      <div class="logo">Smart Energy</div>
+      <nav class="desktop-menu">
+        <ul>
+          <li><a href="documentation.html">Технічна документація</a>
+            <ul>
+              <li><a href="passport.html">Протокол ПРГ</a></li>
+              <li><a href="project.html">Робочий проект</a></li>
+              <li><a href="docs.html">Виконавчо-технічна документація</a></li>
+              <li><a href="scheme.html">Принципова схема ПРГ</a></li>
+              <li><a href="mode.html">Режимна картка роботи обладнання</a></li>
+            </ul>
+          </li>
+          <li><a href="works.html">Виконання робіт</a>
+            <ul>
+              <li><a href="list_prg.html">Графіки проведення робіт</a></li>
+              <li><a href="inspection.html">Технічний огляд</a></li>
+              <li><a href="adjustment.html">Регулювання</a></li>
+              <li><a href="maintenance.html">Технічне обслуговування</a></li>
+              <li><a href="repair.html">Плановий ремонт</a></li>
+              <li><a href="devices.html">Обслуговування КВП</a></li>
+              <li><a href="photo.html">Фотофіксація</a></li>
+            </ul>
+          </li>
+          <li><a href="instructions.html">Інструкції та навчальні відео</a></li>
+            <ul>
+              <li><a href="instructions.html">Інструкції</a></li>
+              <li><a href="videos.html">Відео</a></li>
+            </ul>
+        </ul>
+      </nav>
 
-<!-- Бургер -->
-<div class="burger">☰</div>
+      <!-- Бургер -->
+      <div class="burger">☰</div>
 
-<!-- Мобільне меню -->
-<div id="mobileMenu" class="mobile-menu">
-  <div class="menu-header">
-    <button onclick="goBack()">←</button>
-    <span id="menuTitle">Сервіс</span>
-    <button onclick="closeMenu()">✖</button>
-  </div>
-  <ul id="menuContent">
-    <li onclick="openSubmenu('documentation', 'Технічна документація')">Технічна документація</li>
-    <li onclick="openSubmenu('works', 'Виконання робіт')">Виконання робіт</li>
-    <li onclick="openSubmenu('instructions', 'Інструкції та навчальні відео')">Інструкції та навчальні відео</li>
-  </ul>
-</div>
-  </header>
+      <!-- Мобільне меню -->
+      <div id="mobileMenu" class="mobile-menu">
+        <div class="menu-header">
+          <button onclick="goBack()">←</button>
+          <span id="menuTitle">Сервіс</span>
+          <button onclick="closeMenu()">✖</button>
+        </div>
+        <ul id="menuContent">
+          <li onclick="openSubmenu('documentation', 'Технічна документація')">Технічна документація</li>
+          <li onclick="openSubmenu('works', 'Виконання робіт')">Виконання робіт</li>
+          <li onclick="openSubmenu('instructions', 'Інструкції та навчальні відео')">Інструкції та навчальні відео</li>
+        </ul>
+      </div>
+    </header>
    
     <h2>Протокол ПРГ з ГІС</h2>
+
+    <div class="gallery">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+      <img src="img/protokol/protokol_1.jpg" alt="Протокол 1">
+      <img src="img/protokol/protokol_2.jpg" alt="Протокол 2">
+      <img src="img/protokol/protokol_3.jpg" alt="Протокол 3">
+      <img src="img/protokol/protokol_4.jpg" alt="Протокол 4">
+      <img src="img/protokol/protokol_5.jpg" alt="Протокол 5">
+    </div>
+
     <ul>
-        <li><a href="docs/protokol.pdf">Протокол ПРГ</a></li>
-       
-      <li><a href="service.html">Повернутись назад</a> |
-      </li>
+      <li><a href="docs/protokol.pdf">Відкрити весь протокол у PDF</a></li>
+      <li><a href="service.html">Повернутись назад</a></li>
     </ul>
-  
-
-
-
-</body>
+  </body>
+</html>

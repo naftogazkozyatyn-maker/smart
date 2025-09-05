@@ -6,70 +6,32 @@
   <title>Сервіс</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.body.insertAdjacentHTML("afterbegin", data);
+        });
+    });
+  </script>
 </head>
 <body>
-  <header>
-    <div class="logo">Smart Energy</div>
-    <nav class="desktop-menu">
-      <ul>
-        <li><a href="documentation.html">Технічна документація</a>
-          <ul>
-            <li><a href="passport.html">Протокол ПРГ</a></li>
-            <li><a href="project.html">Робочий проект</a></li>
-            <li><a href="docs.html">Виконавчо-технічна документація</a></li>
-            <li><a href="scheme.html">Принципова схема ПРГ</a></li>
-            <li><a href="mode.html">Режимна картка роботи обладнання</a></li>
-          </ul>
-        </li>
-        <li><a href="works.html">Виконання робіт</a>
-          <ul>
-            <li><a href="list_prg.html">Графіки проведення робіт</a></li>
-            <li><a href="inspection.html">Технічний огляд</a></li>
-            <li><a href="adjustment.html">Регулювання</a></li>
-            <li><a href="maintenance.html">Технічне обслуговування</a></li>
-            <li><a href="repair.html">Плановий ремонт</a></li>
-            <li><a href="devices.html">Обслуговування КВП</a></li>
-            <li><a href="photo.html">Фотофіксація</a></li>
-          </ul>
-        </li>
-        <li><a href="instructions.html">Інструкції та навчальні відео</a></li>
-      </ul>
-    </nav>
-
-<!-- Бургер -->
-<div class="burger">☰</div>
-
-<!-- Мобільне меню -->
-<div id="mobileMenu" class="mobile-menu">
-  <div class="menu-header">
-    <button onclick="goBack()">←</button>
-    <span id="menuTitle">Сервіс</span>
-    <button onclick="closeMenu()">✖</button>
-  </div>
-  <ul id="menuContent">
-    <li onclick="openSubmenu('documentation', 'Технічна документація')">Технічна документація</li>
-    <li onclick="openSubmenu('works', 'Виконання робіт')">Виконання робіт</li>
-    <li onclick="openSubmenu('instructions', 'Інструкції та навчальні відео')">Інструкції та навчальні відео</li>
-  </ul>
-</div>
-  </header>
-  
   <main>
-  <h1>Сервісна сторінка</h1>
-    <p>ПРГ перебуває в зоні експлуатаційної відповідальності Калинівської дільниці Хмільницького УЕГГ Вінницької філії ТОВ "Газорозподільні мережі України"</p>
+    <h1>Сервісна сторінка</h1>
+    <p>ПРГ перебуває в зоні експлуатаційної відповідальності Калинівської дільниці ВФ ТОВ "Газорозподільні мережі України"</p>
     <p>Відповідальні за об’єкт:</p>
-    <p>Пендюр Олександр Миколайович, старший інженер 067 316 26 56:</p>
-    <p>Волинець Юрій Іванович, майстер СЕСГ 067 788 15 56</p>
-    
-     <p>Оберіть розділ:</p>
+    <p>Пендюр Олександр Миколайович, старший інженер, тел.067-316-26-56</p>
+    <p>Волинець Юрій Іванович, майстер СЕСГ, тел.067-788-15-56</p>
+
+    <p>Оберіть розділ:</p>
     <div class="works-links">
-    <a href="documentation.html" class="btn">Технічна документація</a>  
-    <a href="works.html" class="btn">Виконання робіт</a>  
-    <a href="instructions.html" class="btn">Інструкції та навчальні відео</a>  
+      <a href="documentation.html" class="btn">Технічна документація</a>  
+      <a href="works.html" class="btn">Виконання робіт</a>  
+      <a href="instructions.html" class="btn">Інструкції та навчальні відео</a>  
     </div>
       
-  <div id="userInfo"></div>
+    <div id="userInfo"></div>
   </main>
-  
 </body>
 </html>
