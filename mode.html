@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Режимна картка роботи обладнання ПРГ</title>
     <link rel='stylesheet' href='css/style.css'>
-
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("header.html")
+          .then(response => response.text())
+          .then(data => {
+            document.body.insertAdjacentHTML("afterbegin", data);
+          });
+      });
+    </script>
 <style>
     /* Картинки займають всю доступну ширину, але не більше 100% */
     .scheme-icon {
@@ -54,55 +62,6 @@
     
   </head>
 <body>
-  <header>
-    <div class="logo">Smart Energy</div>
-    <nav class="desktop-menu">
-      <ul>
-        <li><a href="documentation.html">Технічна документація</a>
-          <ul>
-            <li><a href="passport.html">Протокол ПРГ</a></li>
-            <li><a href="project.html">Робочий проект</a></li>
-            <li><a href="docs.html">Виконавчо-технічна документація</a></li>
-            <li><a href="scheme.html">Принципова схема ПРГ</a></li>
-            <li><a href="mode.html">Режимна картка роботи обладнання</a></li>
-          </ul>
-        </li>
-        <li><a href="works.html">Виконання робіт</a>
-          <ul>
-            <li><a href="list_prg.html">Графіки проведення робіт</a></li>
-            <li><a href="inspection.html">Технічний огляд</a></li>
-            <li><a href="adjustment.html">Регулювання</a></li>
-            <li><a href="maintenance.html">Технічне обслуговування</a></li>
-            <li><a href="repair.html">Плановий ремонт</a></li>
-            <li><a href="devices.html">Обслуговування КВП</a></li>
-            <li><a href="photo.html">Фотофіксація</a></li>
-          </ul>
-        </li>
-        <li><a href="instructions.html">Інструкції та навчальні відео</a></li>
-          <ul>
-            <li><a href="instructions.html">Інструкції</a></li>
-            <li><a href="videos.html">Відео</a></li>
-          </ul>
-      </ul>
-    </nav>
-
-<!-- Бургер -->
-<div class="burger">☰</div>
-
-<!-- Мобільне меню -->
-<div id="mobileMenu" class="mobile-menu">
-  <div class="menu-header">
-    <button onclick="goBack()">←</button>
-    <span id="menuTitle">Сервіс</span>
-    <button onclick="closeMenu()">✖</button>
-  </div>
-  <ul id="menuContent">
-    <li onclick="openSubmenu('documentation', 'Технічна документація')">Технічна документація</li>
-    <li onclick="openSubmenu('works', 'Виконання робіт')">Виконання робіт</li>
-    <li onclick="openSubmenu('instructions', 'Інструкції та навчальні відео')">Інструкції та навчальні відео</li>
-  </ul>
-</div>
-  </header>
   
     <h2>Режимна картка роботи обладнання ПРГ</h2>
     <ul>
@@ -114,51 +73,22 @@
     <img src="img/2_regime.jpg" alt="Схема 2" class="scheme-icon">
   </a>
 
-      
-      <li><a href="service.html">Повернутись назад</a> |
-      </li>
+ 
     </ul>
   
+    <button class="btn-back" onclick="goBackOneLevel()">Повернутись</button>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector(".menu-toggle");
-    const menu = document.querySelector("nav");
-
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => {
-        menu.classList.toggle("active");
-      });
+  function goBackOneLevel() {
+    let path = window.location.pathname.split("/");
+    if (path.length > 2) {
+      path.pop(); // прибираємо поточний файл
+      window.location.href = path.join("/") + "/";
+    } else {
+      // якщо ми вже в корені сайту
+      window.location.href = "/";
     }
-
-    // Десктоп: підменю при hover
-    const items = document.querySelectorAll("nav ul li");
-    items.forEach(item => {
-      item.addEventListener("mouseenter", () => {
-        if (window.innerWidth > 768) {
-          let submenu = item.querySelector("ul");
-          if (submenu) submenu.style.display = "block";
-        }
-      });
-      item.addEventListener("mouseleave", () => {
-        if (window.innerWidth > 768) {
-          let submenu = item.querySelector("ul");
-          if (submenu) submenu.style.display = "none";
-        }
-      });
-
-      // Мобільні: підменю по кліку
-      item.addEventListener("click", (e) => {
-        if (window.innerWidth <= 768) {
-          let submenu = item.querySelector("ul");
-          if (submenu) {
-            e.preventDefault();
-            item.classList.toggle("active");
-          }
-        }
-      });
-    });
-  });
-</script>
+  }
+  </script>
 
 </body>

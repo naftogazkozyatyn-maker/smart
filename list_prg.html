@@ -6,6 +6,15 @@
   <title>Каталог графіків ПРГ</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.body.insertAdjacentHTML("afterbegin", data);
+        });
+    });
+  </script>
   <style>
     :root{--bg:#f7f9fc;--card:#fff;--text:#111827;--muted:#6b7280;--brand:#2563eb}
     *{box-sizing:border-box}
@@ -29,55 +38,9 @@
     a:hover{text-decoration:underline}
     .footer{color:#6b7280;font-size:.875rem;margin-top:12px}
     .counter{margin:8px 0 16px;color:#374151;font-weight:500}
-  </style>
+      </style>
 </head>
 <body>
-
-  <header>
-    <div class="logo">Smart Energy</div>
-    <nav class="desktop-menu">
-      <ul>
-        <li><a href="documentation.html">Технічна документація</a>
-          <ul>
-            <li><a href="passport.html">Протокол ПРГ</a></li>
-            <li><a href="project.html">Робочий проект</a></li>
-            <li><a href="docs.html">Виконавчо-технічна документація</a></li>
-            <li><a href="scheme.html">Принципова схема ПРГ</a></li>
-            <li><a href="mode.html">Режимна картка роботи обладнання</a></li>
-          </ul>
-        </li>
-        <li><a href="works.html">Виконання робіт</a>
-          <ul>
-            <li><a href="list_prg.html">Графіки проведення робіт</a></li>
-            <li><a href="inspection.html">Технічний огляд</a></li>
-            <li><a href="adjustment.html">Регулювання</a></li>
-            <li><a href="maintenance.html">Технічне обслуговування</a></li>
-            <li><a href="repair.html">Плановий ремонт</a></li>
-            <li><a href="devices.html">Обслуговування КВП</a></li>
-            <li><a href="photo.html">Фотофіксація</a></li>
-          </ul>
-        </li>
-        <li><a href="instructions.html">Інструкції та навчальні відео</a></li>
-      </ul>
-    </nav>
-
-    <!-- Бургер -->
-    <div class="burger">☰</div>
-
-    <!-- Мобільне меню -->
-    <div id="mobileMenu" class="mobile-menu">
-      <div class="menu-header">
-        <button onclick="goBack()">←</button>
-        <span id="menuTitle">Сервіс</span>
-        <button onclick="closeMenu()">✖</button>
-      </div>
-      <ul id="menuContent">
-        <li onclick="openSubmenu('documentation', 'Технічна документація')">Технічна документація</li>
-        <li onclick="openSubmenu('works', 'Виконання робіт')">Виконання робіт</li>
-        <li onclick="openSubmenu('instructions', 'Інструкції та навчальні відео')">Інструкції та навчальні відео</li>
-      </ul>
-    </div>
-  </header>
   
   <h1>Каталог графіків ПРГ</h1>
 <div class="toolbar">
@@ -133,6 +96,22 @@ buttons.forEach(btn=>btn.addEventListener('click', ()=>{
 applyFilters();
 </script>
 
-</body></html>
+<button class="btn-back" onclick="goBackOneLevel()">Повернутись</button>
+
+<script>
+  function goBackOneLevel() {
+    let path = window.location.pathname.split("/");
+    if (path.length > 2) {
+      path.pop(); // прибираємо поточний файл
+      window.location.href = path.join("/") + "/";
+    } else {
+      // якщо ми вже в корені сайту
+      window.location.href = "/";
+    }
+  }
+  </script>
+
+</body>
+</html>
 
 

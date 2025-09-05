@@ -94,8 +94,21 @@
   <a href="#img1">
     <img src="img/1_scheme.jpg" alt="Схема 1" class="scheme-icon">
   </a>
+ </ul>
+ 
+ <button class="btn-back" onclick="goBackOneLevel()">Повернутись</button>
 
-  <li><a href="service.html">Повернутись назад</a></li>
-</ul>
+<script>
+  function goBackOneLevel() {
+    let path = window.location.pathname.split("/");
+    if (path.length > 2) {
+      path.pop(); // прибираємо поточний файл
+      window.location.href = path.join("/") + "/";
+    } else {
+      // якщо ми вже в корені сайту
+      window.location.href = "/";
+    }
+  }
+  </script>
+  </body>
 
-<!-- Лайтбокс для

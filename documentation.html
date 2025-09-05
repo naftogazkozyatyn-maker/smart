@@ -30,5 +30,20 @@
       <a href="mode.html" class="btn">Режимна картка роботи обладнання</a>
     </div>
   </main>
+
+  <button class="btn-back" onclick="goBackOneLevel()">Повернутись</button>
+
+  <script>
+    function goBackOneLevel() {
+      let path = window.location.pathname.split("/");
+      if (path.length > 2) {
+        path.pop(); // прибираємо поточний файл
+        window.location.href = path.join("/") + "/";
+      } else {
+        // якщо ми вже в корені сайту
+        window.location.href = "/";
+      }
+    }
+    </script>
 </body>
 </html>
