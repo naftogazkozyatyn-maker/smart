@@ -58,3 +58,32 @@ document.addEventListener("DOMContentLoaded", function () {
     backBtn.style.visibility = level === "root" ? "hidden" : "visible";
   }
 });
+
+
+  // Функція задіювання чекбоксів
+document.addEventListener("DOMContentLoaded", () => {
+  const toggles = document.querySelectorAll(".line-toggle");
+
+  toggles.forEach(toggle => {
+    const line = toggle.dataset.line;
+
+    // Отримуємо всі input-и для цієї лінії
+    const relatedFields = document.querySelectorAll(`[data-line="${line}"]`);
+
+    // Первинне встановлення стану
+    toggleFields(toggle.checked, relatedFields);
+
+    // Обробка зміни стану
+    toggle.addEventListener("change", () => {
+      toggleFields(toggle.checked, relatedFields);
+    });
+  });
+
+  function toggleFields(isEnabled, fields) {
+    fields.forEach(field => {
+      if (field.tagName === "INPUT") {
+        field.disabled = !isEnabled;
+      }
+    });
+  }
+});
