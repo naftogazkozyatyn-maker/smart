@@ -26,15 +26,18 @@
     .geo-output { margin-top: 10px; font-size: 14px; color: #444; }
     footer { background: #eee417; color: #1d4ed8; text-align: center; padding: 10px; margin-top: 30px; }
 
-    .danger-icon{
-  width:400px;        /* розмір значка — змінюйте при потребі */
-  height:400px;
-  vertical-align:middle;
-  margin-right:8px;
-  display:inline-block;
+    .danger-icon {
+  max-width: 100%;   /* підлаштовується під контейнер */
+  height: auto;      /* зберігає пропорції */
+  display: block;
+  margin: 10px auto;
 }
-@media (max-width:480px){
-  .danger-icon{ width:18px; height:18px; margin-right:6px; }
+
+/* обмеження розміру на великих екранах */
+@media (min-width: 1024px) {
+  .danger-icon {
+    max-width: 350px;   /* максимум 350px на десктопі */
+  }
 }
 
   </style>
