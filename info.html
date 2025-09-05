@@ -1,77 +1,79 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Energy – ШГРП №1150061</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Відомості про ШГРП №01150061</title>
+  <link rel="stylesheet" href="css/style.css">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #eee417; color: #1d4ed8; padding: 15px; text-align: center; }
-    .logo { max-height: 60px; }
-    .operator { font-size: 16px; margin-top: 10px; font-weight: bold; }
-    .equipment-id { font-size: 20px; margin-top: 10px; font-weight: bold; }
-    section { padding: 20px; }
-    h2 { color: #1d4ed8; margin-bottom: 10px; }
-    footer { background: #eee417; color: #1d4ed8; text-align: center; padding: 10px; margin-top: 30px; }
-
-    .btn-back {
+    .back-btn {
       display: inline-block;
-      padding: 8px 16px;
-      border-radius: 8px;
-      border: 1px solid #cbd5e1;
-      background: #f1f5f9;
-      color: #1e293b;
-      font-size: 0.95rem;
-      font-weight: 500;
+      margin-bottom: 16px;
+      padding: 8px 14px;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #fff;
+      color: #374151;
       cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
-      margin: 20px 0;
+      font-size: 0.95rem;
+      transition: background 0.2s, color 0.2s;
     }
-    .btn-back:hover {
-      background: #e2e8f0;
-      border-color: #94a3b8;
-      color: #0f172a;
+    .back-btn:hover {
+      background: #e0ebff;
+      color: #1d4ed8;
     }
-
-    table {
+    .info-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px rgba(0,0,0,.06);
+      padding: 20px;
+    }
+    .info-card table {
       width: 100%;
       border-collapse: collapse;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
     }
-    table th, table td {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
+    .info-card th, .info-card td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #f1f5f9;
       text-align: left;
     }
-    table th {
-      background: #eef2ff;
-      color: #1d4ed8;
-      width: 40%;
-    }
-    table tr:last-child td {
-      border-bottom: none;
+    .info-card th {
+      width: 260px;
+      color: #374151;
+      background: #f9fafb;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="img/full_logo_vn.png" alt="Газмережі" class="logo">
-    <div class="operator">Об’єкт газових мереж обслуговує Калинівська дільниця Вінницької філії ТОВ "Газорозподільні мережі України"</div>
-    <div class="equipment-id">Номер об’єкту: ШГРП №1150061</div>
-  </header>
+<div id="site-header"></div>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  fetch("header.html").then(r=>r.text()).then(html=>{
+    var c = document.getElementById('site-header');
+    if(c) c.innerHTML = html;
+  });
+});
+</script>
 
-  <section>
+<h1>Відомості про ШГРП №01150061</h1>
 
+<button class="back-btn" onclick="history.back()">⬅ Повернутись</button>
 
-    <h2>Коротка інформація про об’єкт</h2>
-    <table>
-      <tr><th>Тип обладнання</th><td>ШГРП</td></tr>
-      <tr><th>№ ГІС</th><td>1150061</td></tr>
-      <tr><th>ГРС</th><td>ГРС Хомутинці</td></tr>
-      <tr><th>Адреса</th><td>с.Писарів
-        
-    <a href=".." class="btn-back">⬅ Повернутись</a>
+<div class="info-card">
+  <table>
+    <tr><th>Тип обладнання</th><td>ШГРП</td></tr>
+    <tr><th>Номер об'єкта</th><td>№01150061</td></tr>
+    <tr><th>Адреса</th><td>Хмільницький район м.Калинівка ... (твої дані)</td></tr>
+    <tr><th>Статус обладнання</th><td>включене</td></tr>
+    <tr><th>Техогляд план 01</th><td>22</td></tr>
+    <tr><th>Техогляд план 02</th><td>21</td></tr>
+    <tr><th>...</th><td>...</td></tr>
+    <tr><th>Техогляд факт 01</th><td>1</td></tr>
+    <tr><th>Техогляд факт 02</th><td>1</td></tr>
+    <tr><th>...</th><td>...</td></tr>
+  </table>
+</div>
+
+<div class="footer">Згенеровано автоматично.</div>
+</body>
+</html>
