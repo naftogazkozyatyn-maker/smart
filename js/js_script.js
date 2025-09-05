@@ -106,6 +106,19 @@ document.getElementById("fullForm").addEventListener("submit", function (e) {
     }
   });
 
+  // Перевіримо: якщо лінія увімкнена, тиск має бути вказаний
+  const enabledLines = ['line1', 'line2'].filter(line => formData[`${line}_enabled`]);
+
+  for (const line of enabledLines) {
+    if (
+      !formData[`${line}_pressure_in`] &&
+      !formData[`${line}_pressure_out`]
+    ) {
+      alert(`❌ Для ${line} увімкненої лінії не вказані тиски!`);
+      return;
+    }
+  }
+  
   console.log("📋 Дані для відправки:", formData);
 
   // Якщо потрібно надіслати на сервер:
