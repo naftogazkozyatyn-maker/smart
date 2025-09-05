@@ -39,5 +39,29 @@
       
     <div id="userInfo"></div>
   </main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("userInfo");
+  const data = localStorage.getItem("currentUser");
+
+  if (!data) {
+    container.innerHTML = "<p style='color:red'>Доступ заборонено. Увійдіть через головну сторінку з підтверженням геолокації.</p>";
+    return;
+  }
+
+  const user = JSON.parse(data);
+
+  container.innerHTML = `
+    <p><b>Ім’я:</b> ${user.name}</p>
+    <p><b>Роль:</b> ${user.role}</p>
+    <p><b>Email:</b> ${user.email}</p>
+    <p><b>Координати:</b> ${user.latitude}, ${user.longitude}</p>
+    <p><b>Час входу:</b> ${new Date(user.loginTime).toLocaleString()}</p>
+  `;
+});
+</script>
+
+  
 </body>
 </html>
