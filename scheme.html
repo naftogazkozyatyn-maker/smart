@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Принципова схема обладнання</title>
   <link rel='stylesheet' href='css/style.css'>
-
+  <script src="js/script.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.body.insertAdjacentHTML("afterbegin", data);
+        });
+    });
+  </script>
   <style>
     /* Картинки займають всю доступну ширину, але не більше 100% */
     .scheme-icon {
@@ -53,38 +62,6 @@
   </style>
 </head>
 <body>
-<header>
-  <div class="logo">Smart Energy</div>
-  <nav class="desktop-menu">
-    <ul>
-      <li><a href="documentation.html">Технічна документація</a>
-        <ul>
-          <li><a href="passport.html">Протокол ПРГ</a></li>
-          <li><a href="project.html">Робочий проект</a></li>
-          <li><a href="docs.html">Виконавчо-технічна документація</a></li>
-          <li><a href="scheme.html">Принципова схема ПРГ</a></li>
-          <li><a href="mode.html">Режимна картка роботи обладнання</a></li>
-        </ul>
-      </li>
-      <li><a href="works.html">Виконання робіт</a>
-        <ul>
-          <li><a href="list_prg.html">Графіки проведення робіт</a></li>
-          <li><a href="inspection.html">Технічний огляд</a></li>
-          <li><a href="adjustment.html">Регулювання</a></li>
-          <li><a href="maintenance.html">Технічне обслуговування</a></li>
-          <li><a href="repair.html">Плановий ремонт</a></li>
-          <li><a href="devices.html">Обслуговування КВП</a></li>
-          <li><a href="photo.html">Фотофіксація</a></li>
-        </ul>
-      </li>
-      <li><a href="instructions.html">Інструкції та навчальні відео</a></li>
-        <ul>
-          <li><a href="instructions.html">Інструкції</a></li>
-          <li><a href="videos.html">Відео</a></li>
-        </ul>
-    </ul>
-  </nav>
-</header>
 
 <h2>Принципова схема обладнання</h2>
 <ul>
